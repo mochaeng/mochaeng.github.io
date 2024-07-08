@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "DM Sans Variable", sans-serif;
+}
+
+@layer base {
+  :root {
+    --color-main: 27 98% 63%;
+    --color-background: 39 100% 94%;
+    --color-text: 0 0% 0%;
+    --color-border: 0 0% 0%;
+    --shadow: 4px 4px 0px 0px #000;
+
+    /* --color-background: 240 10% 3.9%; */
+  }
+
+  .dark {
+    --color-background: 217 19% 27%;
+    --color-text: 70 16% 93%;
+  }
+}

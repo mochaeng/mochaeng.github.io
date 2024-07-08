@@ -1,9 +1,40 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Layout title="Mochaeng <3">
-  <main class="flex min-h-screen h-full justify-center items-center">
-    <h1>Hello, I'm Mochaeng</h1>
+  <Header />
+  <main class="flex flex-col justify-center items-center m-auto text-text">
+    <h1 class="text-6xl">Hello, I'm Mochaeng</h1>
+    <p class="text-4xl">Software Developer from Brazil</p>
   </main>
 </Layout>
+
+<script is:inline>
+  // const getThemePreference = () => {
+  //   if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+  //     return localStorage.getItem("theme");
+  //   }
+  //   console.log("im called right/");
+  //   return "dark";
+  //   // return window.matchMedia("(prefers-color-scheme: dark)").matches
+  //   //   ? "dark"
+  //   //   : "light";
+  // };
+
+  // const isDark = getThemePreference() === "dark";
+  // document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  // if (typeof localStorage !== "undefined") {
+  //   const observer = new MutationObserver(() => {
+  //     const isDark = document.documentElement.classList.contains("dark");
+  //     localStorage.setItem("theme", isDark ? "dark" : "light");
+  //   });
+
+  //   observer.observe(document.documentElement, {
+  //     attributes: true,
+  //     attributeFilter: ["class"],
+  //   });
+  // }
+</script>

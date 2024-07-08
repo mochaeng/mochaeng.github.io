@@ -1,0 +1,53 @@
+---
+import ThemeToggle from "./ThemeToggle.svelte";
+---
+
+<div class="bg-white border-b-4 border-black w-full sticky top-0">
+  <header
+    class="flex rou justify-between max-w-screen-xl mx-auto px-6 h-16 items-center"
+  >
+    <div>
+      <a href="/" class="text-4xl">
+        <span class="font-heading">Mochaeng</span>
+      </a>
+    </div>
+    <nav class="flex text-xl font-base justify-center items-center">
+      <ul class="gap-8 flex">
+        <li><a href="/">Projects</a></li>
+        <li><a href="/">Blog</a></li>
+        <li><a href="/">About</a></li>
+      </ul>
+    </nav>
+    <ThemeToggle client:only="svelte" />
+  </header>
+</div>
+
+<style>
+  li {
+    a {
+      padding: 0.5rem;
+      border-radius: 1rem;
+      font-size: 18px;
+      position: relative;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: black;
+      transform: scaleX(0);
+      bottom: 0;
+      left: 0;
+      transform-origin: left;
+      transition: transform 0.3s ease-out;
+    }
+
+    a:hover::after {
+      width: 100%;
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+</style>
