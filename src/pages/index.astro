@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Base.astro";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.svelte";
 ---
 
 <Layout title="Mochaeng <3">
-  <Header />
+  <Header client:only />
   <main class="flex flex-col justify-center items-center m-auto text-text">
     <h1 class="text-6xl">Hello, I'm Mochaeng</h1>
     <p class="text-4xl">Software Developer from Brazil</p>

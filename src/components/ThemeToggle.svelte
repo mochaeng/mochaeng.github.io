@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Moon, Sun } from "lucide-svelte";
   import { onMount } from "svelte";
-  import IconButton from "./ui/IconButton.svelte";
+  import Button from "./ui/Button.svelte";
 
   let theme: "light" | "dark" | "system" = "light";
 
@@ -32,10 +32,10 @@
   }
 </script>
 
-<IconButton onclick={onToggleTheme} isAriaHidden={true}>
+<Button onclick={onToggleTheme} ariaHidden={true} variant="icon">
   {#if theme == "light"}
     <Moon />
   {:else}
     <Sun />
   {/if}
-</IconButton>
+</Button>
