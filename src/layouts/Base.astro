@@ -4,7 +4,9 @@ type Props = {
 };
 
 const { title } = Astro.props;
-import "../global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.svelte";
+import "../styles//global.css";
 import "@fontsource-variable/dm-sans";
 ---
 
@@ -21,8 +23,12 @@ import "@fontsource-variable/dm-sans";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-
   <body class="bg-background min-h-screen h-screen overflow-auto flex flex-col">
+    <Header client:only />
     <slot />
+    <Footer />
+    <script>
+      import "../scripts/theme";
+    </script>
   </body>
 </html>

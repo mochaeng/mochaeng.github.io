@@ -1,141 +1,186 @@
 <script lang="ts">
-  import { Menu, X } from "lucide-svelte";
-  import ThemeToggle from "./ThemeToggle.svelte";
-  import Button from "./ui/Button.svelte";
+  import { Menu, Moon, Sun, X } from "lucide-svelte";
   import { onMount } from "svelte";
+  import Button from "./ui/Button.svelte";
 
   let isAriaExpanded = false;
-  const media = window.matchMedia("(width < 40em)");
+  let isDark = document.documentElement.classList.contains("dark");
+  let media = window.matchMedia("(width < 43em)");
+
+  $: console.log(isAriaExpanded);
 
   onMount(() => {
-    media.addEventListener("change", function (e) {
-      setupTopNav(e);
+    media.addEventListener("change", function (event) {
+      setupNavbar(event);
     });
   });
 
-  function setupTopNav(event: MediaQueryListEvent) {
+  function setupNavbar(event: MediaQueryListEvent) {
     if (!event.matches) {
       isAriaExpanded = false;
     }
   }
 
-  function toggleHamburguer() {
-    isAriaExpanded = !isAriaExpanded;
+  function openHamburguer() {
+    isAriaExpanded = true;
+  }
+
+  function closeHamburguer() {
+    isAriaExpanded = false;
+  }
+
+  function toggleTheme() {
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    isDark = document.documentElement.classList.contains("dark");
+    console.log("am i recalled??");
+    console.log(isDark);
+
+    if (isDark) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
   }
 </script>
 
-<div
-  class="bg-white border-b-4 border-black w-full sticky top-0 text-text font-base"
->
-  <header
-    class="flex justify-between max-w-screen-xl mx-auto h-16 items-center z-50"
-  >
-    <div class="hamburguer-toggle z-50">
-      <Button
-        onclick={toggleHamburguer}
-        variant="icon"
-        ariaExpanded={isAriaExpanded}
-      >
-        <span class="sr-only">Menu</span>
-        {#if isAriaExpanded}
-          <X />
-        {:else}
-          <Menu />
-        {/if}
+<header class="bg-white h-16 border-2 border-border">
+  <div class="wrapper max-w-screen-xl h-full mx-auto flex items-center p-2">
+    <div class="hamburguer-open z-10" aria-expanded={isAriaExpanded}>
+      <Button on:click={openHamburguer}>
+        <span class="sr-only">Open Menu</span>
+        <Menu size={32} />
       </Button>
     </div>
 
-    <div class="logo w-full text-center">
-      <a href="/" class="text-3xl">
-        <span class="font-heading text-black">Mochaeng</span>
-      </a>
+    <div class="hamburguer-close z-10" aria-expanded={isAriaExpanded}>
+      <Button on:click={closeHamburguer}>
+        <span class="sr-only">Close Menu</span>
+        <X size={32} />
+      </Button>
     </div>
 
-    <nav class="text-3xl">
-      <ul
-        class="bg-background border-2 border-border"
-        data-visible={isAriaExpanded}
-      >
-        <li>
-          <a href="/">Projects</a>
-        </li>
-        <li><a href="/">Blog</a></li>
-        <li><a href="/">About</a></li>
+    <div class="logo w-full">
+      <a href="/" class="text-4xl font-heading">Mochaeng</a>
+    </div>
+
+    <div
+      class="overlay absolute inset-0 bg-black/70 hidden"
+      data-visible={isAriaExpanded}
+    ></div>
+
+    <nav class="text-text">
+      <ul class="z-50" data-visible={isAriaExpanded}>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
     </nav>
 
-    <div class="theme-toggle">
-      <ThemeToggle />
+    <div class="theme-toggle z-10" data-visible={isAriaExpanded}>
+      <Button on:click={toggleTheme} class=" ">
+        <span class="sr-only">Toggle Theme</span>
+        {#if isDark}
+          <Moon size={32} />
+        {:else}
+          <Sun size={32} />
+        {/if}
+      </Button>
     </div>
-  </header>
-</div>
+  </div>
+</header>
 
 <style lang="less">
   header {
-    padding: 0.5rem;
+    .hamburguer-open {
+      position: relative;
+      z-index: 9999;
+    }
+
+    .hamburguer-open[aria-expanded="true"] {
+      display: none;
+    }
+
+    .hamburguer-close {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+    }
+
+    .hamburguer-close[aria-expanded="false"] {
+      display: none;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .overlay[data-visible="true"] {
+      display: block;
+    }
+
+    .theme-toggle[data-visible="true"] {
+      position: absolute;
+      top: 6rem;
+      right: 2rem;
+    }
+
     nav {
       ul {
         position: fixed;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 5rem;
-        transform: translate(-100%);
-        gap: 1.5rem;
+        gap: 2rem;
         inset: 0 30% 0 0;
-        li {
-          a {
-            position: relative;
-          }
-
-          a::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: hsl(var(--color-text));
-            transform: scaleX(0);
-            bottom: 0;
-            left: 0;
-            transform-origin: left;
-            transition: transform 0.3s ease-out;
-          }
-
-          a:hover::after {
-            width: 100%;
-            transform: scaleX(1);
-            transform-origin: bottom left;
-          }
-        }
+        padding-top: 10rem;
+        font-size: 2rem;
+        border: 4px solid black;
+        background-color: hsl(var(--color-background));
+        transform: translate(-100%);
       }
 
       ul[data-visible="true"] {
         transform: translate(0);
       }
+
+      li {
+        a {
+          position: relative;
+        }
+
+        a::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: hsl(var(--color-text));
+          transform: scaleX(0);
+          bottom: 0;
+          left: 0;
+          transform-origin: left;
+          transition: transform 0.3s ease-out;
+        }
+
+        a:hover::after {
+          width: 100%;
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
     }
   }
 
-  @media (min-width: 40em) {
+  @media (min-width: 43em) {
     header {
-      padding: 1rem;
-      nav {
-        display: flex;
-        height: 100%;
-        ul {
-          font-size: 1.875rem;
-          position: static;
-          display: flex;
-          flex-direction: row;
-          padding-top: 0;
-          transform: translate(0);
-          border: none;
-          padding: 0 1rem;
-          background-color: white;
-          color: black;
-        }
+      .wrapper {
+        gap: 2rem;
+        padding: 0 1rem;
       }
 
-      .hamburguer-toggle {
+      .hamburguer-close,
+      .hamburguer-open {
         display: none;
       }
 
@@ -144,11 +189,21 @@
       }
 
       nav {
-        display: block;
-      }
+        ul {
+          position: static;
+          flex-direction: row;
+          padding-top: 0;
+          transform: translate(0);
+          background-color: white;
+          border: none;
+          color: black;
+        }
 
-      .theme-toggle {
-        display: block;
+        li {
+          a::after {
+            background-color: black;
+          }
+        }
       }
     }
   }

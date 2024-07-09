@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+const pageTittle = "About me";
+const identity = {
+  firstName: "Luiz",
+  country: "Brazil",
+};
+
+const skills = ["Typescript", "Python", "Rust", "HTML", "CSS"];
+---
+
+<p>I'm a software developer</p>
+
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>
+
+<style>
+  li {
+    color: hsl(var(--color-text));
+  }
+</style>
