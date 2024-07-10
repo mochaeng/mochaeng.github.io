@@ -3,7 +3,6 @@ import Layout from "../layouts/Base.astro";
 import "@fontsource/acme";
 
 import me from "../assets/me.jpeg";
-import { Image } from "astro:assets";
 ---
 
 <Layout title="Mochaeng <3">
@@ -18,9 +17,9 @@ import { Image } from "astro:assets";
       </p>
     </div>
     <div class="second">
-      <Image
+      <img
         class="rounded-full object-contain shadow-brute"
-        src={me}
+        src={me.src}
         alt="Luna from sailor moon"
       />
     </div>

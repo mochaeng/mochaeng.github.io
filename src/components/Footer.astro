@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Button from "./ui/Button.svelte";
 
 import github from "../assets/icons/github.svg";
@@ -37,7 +36,7 @@ const infos = [
       infos.map((info) => (
         <a href={info.url} target="_blank">
           <Button>
-            <Image width={34} src={info.icon} alt={info.alt} />{" "}
+            <img width={34} src={info.icon.src} alt={info.alt} />{" "}
           </Button>
         </a>
       ))
