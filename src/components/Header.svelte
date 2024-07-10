@@ -2,6 +2,7 @@
   import { Menu, Moon, Sun, X } from "lucide-svelte";
   import { onMount } from "svelte";
   import Button from "./ui/Button.svelte";
+  import "@fontsource/lobster";
 
   let isAriaExpanded = false;
   let isDark = document.documentElement.classList.contains("dark");
@@ -32,9 +33,6 @@
     element.classList.toggle("dark");
 
     isDark = document.documentElement.classList.contains("dark");
-    console.log("am i recalled??");
-    console.log(isDark);
-
     if (isDark) {
       localStorage.setItem("theme", "dark");
     } else {
@@ -112,6 +110,9 @@
 
     .logo {
       text-align: center;
+      a {
+        font-family: "Lobster";
+      }
     }
 
     .overlay[data-visible="true"] {

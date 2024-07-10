@@ -20,6 +20,12 @@ importers:
       '@fontsource-variable/dm-sans':
         specifier: ^5.0.6
         version: 5.0.6
+      '@fontsource/acme':
+        specifier: ^5.0.19
+        version: 5.0.19
+      '@fontsource/lobster':
+        specifier: ^5.0.20
+        version: 5.0.20
       astro:
         specifier: ^4.11.5
         version: 4.11.5(less@4.2.0)(typescript@5.5.3)
@@ -370,6 +376,12 @@ packages:
 
   '@fontsource-variable/dm-sans@5.0.6':
     resolution: {integrity: sha512-+CNVseJRlYGB4gUZ2L7yTeCHHBKAMVVhqUz85nb/OoU0hketJrWCHOUJwF5W2MpZCeE0JqJmDFAsEdx8znkrGw==}
+
+  '@fontsource/acme@5.0.19':
+    resolution: {integrity: sha512-Z4iq1xDJ8VASDhR7pq/NU9puVbtr1HBywDDgC1hE9uIMz+RVTBwe49tEE/gjj8s8Z+fUJh4S1wDXh4Rpx/Sz0g==}
+
+  '@fontsource/lobster@5.0.20':
+    resolution: {integrity: sha512-Dr543aD3FpUfFYIMD83xXZJpgxVg9Ig4q9iX+A9ZXY5SplbxHBie4xIo/fCFGBYXul2A9FGKF20QnZGjJ8QtdQ==}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -2590,6 +2602,10 @@ snapshots:
     optional: true
 
   '@fontsource-variable/dm-sans@5.0.6': {}
+
+  '@fontsource/acme@5.0.19': {}
+
+  '@fontsource/lobster@5.0.20': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:

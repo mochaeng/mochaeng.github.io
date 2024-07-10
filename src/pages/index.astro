@@ -1,10 +1,79 @@
 ---
 import Layout from "../layouts/Base.astro";
+import "@fontsource/acme";
+
+import me from "../assets/me.jpeg";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Mochaeng <3">
-  <main class="flex flex-col justify-center items-center m-auto text-text">
-    <h1 class="text-6xl">Hello, I'm Mochaeng</h1>
-    <p class="text-4xl">Software Developer from Brazil</p>
+  <main class="gap-10 p-2 m-auto text-text text-balance">
+    <div class="first max-w-prose">
+      <h1 class="text-6xl">
+        <span class="presentation">Hi, I'm Luiz Campos</span>
+      </h1>
+      <p class="text-3xl mt-6 text-center">
+        I'm a Software Developer based in Brazil. I'm interested in distributed
+        systems and federated learning ...
+      </p>
+    </div>
+    <div class="second">
+      <Image
+        class="rounded-full object-contain shadow-brute"
+        src={me}
+        alt="Luna from sailor moon"
+      />
+    </div>
   </main>
 </Layout>
+
+<style>
+  .presentation {
+    font-family: "Acme", "DM Sans Variable", system-ui;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100dvh;
+
+    .first {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .second {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .second {
+    img {
+      /* width: 300px; */
+      max-width: 70%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    main {
+      flex-direction: row;
+
+      .second {
+        width: 100%;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+</style>
