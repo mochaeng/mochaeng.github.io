@@ -7,8 +7,6 @@
   let isDark = document.documentElement.classList.contains("dark");
   let media = window.matchMedia("(width < 43em)");
 
-  $: console.log(isAriaExpanded);
-
   onMount(() => {
     media.addEventListener("change", function (event) {
       setupNavbar(event);

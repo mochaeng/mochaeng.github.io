@@ -1,8 +1,46 @@
 ---
-const platform = "github";
-const username = "withastro";
+import { Image } from "astro:assets";
+import Button from "./ui/Button.svelte";
+
+import github from "../assets/icons/github.svg";
+import email from "../assets/icons/email.svg";
+import bluesky from "../assets/icons/bluesky.svg";
+import linkedin from "../assets/icons/linkedin.svg";
+
+const infos = [
+  {
+    url: "https://github.com/mochaeng",
+    icon: github,
+    alt: "Github Logo",
+  },
+  {
+    url: "https://bsky.app/profile/mochaeng.bsky.social",
+    icon: bluesky,
+    alt: "Bluesky Logo",
+  },
+  {
+    url: "https://www.linkedin.com/in/luiz-ant%C3%B4nio-4b88161b3/",
+    icon: linkedin,
+    alt: "Linkedin",
+  },
+  {
+    url: "mailto:campos.antoonio@gmail.com",
+    icon: email,
+    alt: "Email logo",
+  },
+];
 ---
 
-<footer>
-  <p>Learn more about my projects on</p>
+<footer class="h-14 flex items-start">
+  <div class="flex mx-auto gap-5">
+    {
+      infos.map((info) => (
+        <a href={info.url} target="_blank">
+          <Button>
+            <Image width={34} src={info.icon} alt={info.alt} />{" "}
+          </Button>
+        </a>
+      ))
+    }
+  </div>
 </footer>
