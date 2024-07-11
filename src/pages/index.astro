@@ -3,18 +3,30 @@ import Layout from "../layouts/Base.astro";
 import "@fontsource/acme";
 
 import me from "../assets/me.jpeg";
+import A from "../components/ui/A.svelte";
 ---
 
 <Layout title="Mochaeng <3">
-  <main class="gap-10 p-2 m-auto text-text text-balance">
-    <div class="first max-w-prose">
-      <h1 class="text-6xl">
-        <span class="presentation">Hi, I'm Luiz Campos</span>
-      </h1>
-      <p class="text-3xl mt-6 text-center">
-        I'm a Software Developer based in Brazil. I'm interested in distributed
-        systems and federated learning ...
-      </p>
+  <main class="flex-1 text-text text-balance max-w-screen-xl">
+    <div class="first">
+      <div
+        class="info w-[90%] flex flex-col items-center p-4 border-2 border-border shadow-brute rounded-base"
+      >
+        <h1 class="text-6xl text-center">
+          <span class="presentation">
+            Hi, I'm Luiz Campos.
+            <span class="text-5xl font-bold">(@mochaeng)</span>
+          </span>
+        </h1>
+        <p class="text-3xl mt-8 text-center">
+          Software Developer based in Brazil, linux enjoyer, docs reader, and
+          terminals lover.
+        </p>
+        <div class="buttons p-4 flex gap-6">
+          <A className="bg-main p-3">Projects</A>
+          <A className="bg-main p-3">About</A>
+        </div>
+      </div>
     </div>
     <div class="second">
       <img
@@ -36,7 +48,8 @@ import me from "../assets/me.jpeg";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 100dvh;
+    gap: 1rem;
+    margin-top: 5rem;
 
     .first {
       display: flex;
@@ -46,31 +59,32 @@ import me from "../assets/me.jpeg";
     }
 
     .second {
-      width: 50%;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       img {
-        max-width: 100%;
+        max-width: 200px;
       }
     }
   }
 
-  .second {
-    img {
-      /* width: 300px; */
-      max-width: 70%;
-    }
-  }
-
-  @media (min-width: 768px) {
+  @media (min-width: 840px) {
     main {
-      flex-direction: row;
+      align-items: center;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+
+      .first {
+        .info {
+          max-width: 80%;
+        }
+      }
 
       .second {
         width: 100%;
         img {
-          max-width: 100%;
+          max-width: 250px;
         }
       }
     }

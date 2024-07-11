@@ -20,15 +20,19 @@ import "@fontsource-variable/dm-sans";
       content="Mochaeng is a software developer from Brazil"
     />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml+ico" href="favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="bg-background min-h-screen h-screen overflow-auto flex flex-col">
-    <Header client:only="svelte" />
-    <slot />
-    <Footer />
+  <body class="bg-background overflow-auto">
+    <div
+      class="absolute inset-0 flex flex-col justify-between items-center overflow-auto gap-2"
+    >
+      <Header client:only="svelte" />
+      <slot />
+      <Footer />
+    </div>
     <script>
       import "../scripts/theme";
     </script>

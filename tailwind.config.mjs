@@ -8,6 +8,7 @@ export default {
         main: "hsl(var(--color-main))",
         border: "hsl(var(--color-border))",
         text: "hsl(var(--color-text))",
+        mainAccent: "hsl(var(--main-accent))",
       },
       borderRadius: {
         base: "5px",

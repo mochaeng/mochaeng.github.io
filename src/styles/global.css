@@ -10,11 +10,10 @@
   :root {
     --color-main: 27 98% 63%;
     --color-background: 39 100% 94%;
+    --main-accent: 27 98% 50%;
     --color-text: 0 0% 0%;
     --color-border: 0 0% 0%;
     --shadow: 4px 4px 0px 0px #000;
-
-    /* --color-background: 240 10% 3.9%; */
   }
 
   .dark {

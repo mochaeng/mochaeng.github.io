@@ -1,8 +1,8 @@
 <script lang="ts">
+  import "@fontsource/homemade-apple";
   import { Menu, Moon, Sun, X } from "lucide-svelte";
   import { onMount } from "svelte";
   import Button from "./ui/Button.svelte";
-  import "@fontsource/lobster";
 
   let isAriaExpanded = false;
   let isDark = document.documentElement.classList.contains("dark");
@@ -41,7 +41,7 @@
   }
 </script>
 
-<header class="bg-white h-16 border-2 border-border">
+<header class="fixed top-0 bg-white h-16 border-2 border-border w-full">
   <div class="wrapper max-w-screen-xl h-full mx-auto flex items-center p-2">
     <div class="hamburguer-open z-10" aria-expanded={isAriaExpanded}>
       <Button on:click={openHamburguer}>
@@ -58,13 +58,10 @@
     </div>
 
     <div class="logo w-full">
-      <a href="/" class="text-4xl font-heading">Mochaeng</a>
+      <a href="/" class="text-3xl font-bold">L. C.</a>
     </div>
 
-    <div
-      class="overlay absolute inset-0 bg-black/70 hidden"
-      data-visible={isAriaExpanded}
-    ></div>
+    <div class="overlay" data-visible={isAriaExpanded}></div>
 
     <nav class="text-text">
       <ul class="z-50" data-visible={isAriaExpanded}>
@@ -75,7 +72,7 @@
     </nav>
 
     <div class="theme-toggle z-10" data-visible={isAriaExpanded}>
-      <Button on:click={toggleTheme} class=" ">
+      <Button on:click={toggleTheme}>
         <span class="sr-only">Toggle Theme</span>
         {#if isDark}
           <Moon size={32} />
@@ -111,8 +108,15 @@
     .logo {
       text-align: center;
       a {
-        font-family: "Lobster";
+        font-family: "Homemade Apple", "Arial";
       }
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0 0 0 0;
+      background-color: hsl(0 0% 0% / 0.7);
     }
 
     .overlay[data-visible="true"] {
