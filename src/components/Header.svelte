@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "@fontsource/homemade-apple";
   import "@fontsource/pacifico";
   import { Menu, Moon, Sun, X } from "lucide-svelte";
   import { onMount } from "svelte";
