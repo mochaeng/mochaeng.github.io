@@ -8,9 +8,18 @@
 
 @layer base {
   :root {
-    --color-main: 27 98% 63%;
-    --color-background: 39 100% 94%;
+    /* yellow/orange  */
+    --color-main: 0 100% 71%;
+    /* --color-main: 282 79% 62%; */
+    /* --color-main: 262 100% 82%; */
+    --color-background: 27 92% 95%;
     --main-accent: 27 98% 50%;
+
+    /* pastel  */
+    /* --color-main: 262 100% 82%;
+    --color-background: 169 57% 91%;
+    --main-accent: 262 100% 70%; */
+
     --color-text: 0 0% 0%;
     --color-border: 0 0% 0%;
     --shadow: 4px 4px 0px 0px #000;

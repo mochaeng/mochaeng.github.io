@@ -1,10 +1,27 @@
 ---
 import Layout from "../layouts/Base.astro";
+import ProjectCard from "../components/ProjectCard.svelte";
+import { projectTopics } from "../scripts/cards.ts";
 ---
 
 <Layout title="Projects">
-  <main class="flex flex-col justify-center items-center m-auto text-text">
-    <h1 class="text-6xl">My projects</h1>
-    <p class="text-4xl">Software Developer from Brazil</p>
+  <main
+    class="flex flex-col justify-start items-center text-text mt-16 max-w-screen-xl"
+  >
+    {
+      projectTopics.map((topic) => (
+        <article class="mt-10 p-3 flex flex-col gap-2 w-full text-center">
+          <h1 class="text-6xl">{topic.name}</h1>
+          <p class="text-xl">{topic.description}</p>
+          <div class="mt-4 flex justify-center gap-4 flex-wrap">
+            {topic.cards.map((card) => (
+              <ProjectCard {card} />
+            ))}
+          </div>
+        </article>
+      ))
+    }
   </main>
+
+  <style></style>
 </Layout>

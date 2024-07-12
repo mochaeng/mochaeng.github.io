@@ -9,9 +9,7 @@ import A from "../components/ui/A.svelte";
 <Layout title="Mochaeng <3">
   <main class="flex-1 text-text text-balance max-w-screen-xl">
     <div class="first">
-      <div
-        class="info w-[90%] flex flex-col items-center p-4 border-2 border-border shadow-brute rounded-base"
-      >
+      <div class="info flex flex-col items-center p-4">
         <h1 class="text-6xl text-center">
           <span class="presentation">
             Hi, I'm Luiz Campos.
@@ -23,8 +21,12 @@ import A from "../components/ui/A.svelte";
           terminals lover.
         </p>
         <div class="buttons p-4 flex gap-6">
-          <A className="bg-main p-3">Projects</A>
-          <A className="bg-main p-3">About</A>
+          <A href="/projects" className="bg-main p-3 font-bold text-xl w-28"
+            >Projects</A
+          >
+          <A href="/about" className="bg-main p-3 font-bold text-xl w-28"
+            >About</A
+          >
         </div>
       </div>
     </div>
@@ -65,6 +67,23 @@ import A from "../components/ui/A.svelte";
       align-items: center;
       img {
         max-width: 200px;
+      }
+    }
+  }
+
+  @media (min-width: 414px) {
+    main {
+      .first {
+        .info {
+          width: 90%;
+          border-width: 2px;
+          border-color: hsl(var(--color-border));
+          border-radius: 5px;
+          box-shadow: 4px 4px 0px 0px #000;
+          /* --tw-shadow-colored: 4px 4px 0px 0px var(--tw-shadow-color);
+          box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+            var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); */
+        }
       }
     }
   }
