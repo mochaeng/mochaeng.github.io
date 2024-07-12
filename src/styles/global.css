@@ -9,11 +9,14 @@
 @layer base {
   :root {
     /* yellow/orange  */
-    --color-main: 0 100% 71%;
-    /* --color-main: 282 79% 62%; */
+    --color-main: 262, 100%, 82%;
+    /* --color-main: 219, 100%, 94%; */
     /* --color-main: 262 100% 82%; */
-    --color-background: 27 92% 95%;
+    --color-background: 169, 57%, 91%;
+    /* --color-background: 221, 42%, 91%; */
     --main-accent: 27 98% 50%;
+
+    --color-index: 100 100% 100%;
 
     /* pastel  */
     /* --color-main: 262 100% 82%;
@@ -26,7 +29,9 @@
   }
 
   .dark {
-    --color-background: 217 19% 27%;
-    --color-text: 70 16% 93%;
+    --color-background: 217, 19%, 27%;
+    --color-main: 262, 100%, 82%;
+    --color-text: 0, 0%, 100%;
+    --color-index: 100 100% 100%;
   }
 }

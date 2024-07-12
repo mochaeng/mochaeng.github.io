@@ -15,7 +15,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/dm-sans": "^5.0.6",
     "@fontsource/acme": "^5.0.19",
-    "@fontsource/homemade-apple": "^5.0.19",
+    "@fontsource/pacifico": "^5.0.13",
     "astro": "^4.11.5",
     "lucide-svelte": "^0.399.0",
     "svelte": "^4.2.18",

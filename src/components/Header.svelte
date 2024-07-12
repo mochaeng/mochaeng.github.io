@@ -1,12 +1,13 @@
 <script lang="ts">
   import "@fontsource/homemade-apple";
+  import "@fontsource/pacifico";
   import { Menu, Moon, Sun, X } from "lucide-svelte";
   import { onMount } from "svelte";
   import Button from "./ui/Button.svelte";
 
   let isAriaExpanded = false;
   let isDark = document.documentElement.classList.contains("dark");
-  let media = window.matchMedia("(width < 43em)");
+  let media = window.matchMedia("(width < 48em)");
 
   onMount(() => {
     media.addEventListener("change", function (event) {
@@ -41,8 +42,10 @@
   }
 </script>
 
-<header class="fixed top-0 bg-white h-16 border-2 border-border w-full">
-  <div class="wrapper max-w-screen-xl h-full mx-auto flex items-center p-2">
+<header class="bg-white fixed top-0 h-16 border-2 border-border w-full">
+  <div
+    class="wrapper max-w-screen-xl h-full mx-auto flex items-center p-2 gap-4"
+  >
     <div class="hamburguer-open z-10" aria-expanded={isAriaExpanded}>
       <Button on:click={openHamburguer}>
         <span class="sr-only">Open Menu</span>
@@ -57,17 +60,30 @@
       </Button>
     </div>
 
-    <div class="logo w-full">
-      <a href="/" class="text-3xl font-bold">L. C.</a>
+    <div class="logo">
+      <a href="/" class="text-3xl font-bold mr-10">L. C.</a>
     </div>
 
     <div class="overlay" data-visible={isAriaExpanded}></div>
 
-    <nav class="text-text">
+    <nav class="text-text flex-1">
       <ul class="z-50" data-visible={isAriaExpanded}>
-        <li><a href="/projects">Projects</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/blog">Blog</a></li>
-        <li><a href="/about">About</a></li>
+        <li class="about-mobile"><a href="/about">About</a></li>
+        <li class="projects-mobile"><a href="/projects">Projects</a></li>
+        <div
+          class="about-projects-desktop hidden h-full items-center justify-end text-xl flex-1"
+        >
+          <a
+            class="h-full flex items-center px-10 border-l-2 border-border bg-white hover:bg-main"
+            href="/about">About</a
+          >
+          <a
+            class="h-full border-l-2 border-r-2 border-border px-10 flex items-center bg-black text-white hover:bg-main"
+            href="/projects">Projects</a
+          >
+        </div>
       </ul>
     </nav>
 
@@ -108,7 +124,7 @@
     .logo {
       text-align: center;
       a {
-        font-family: "Homemade Apple", "Arial";
+        font-family: "Pacifico", "Arial";
       }
     }
 
@@ -138,7 +154,7 @@
         gap: 2rem;
         inset: 0 30% 0 0;
         padding-top: 10rem;
-        font-size: 2rem;
+        font-size: 1.25rem;
         border: 4px solid black;
         background-color: hsl(var(--color-background));
         transform: translate(-100%);
@@ -175,10 +191,10 @@
     }
   }
 
-  @media (min-width: 43em) {
+  @media (min-width: 48em) {
     header {
       .wrapper {
-        gap: 2rem;
+        gap: 1rem;
         padding: 0 1rem;
       }
 
@@ -192,7 +208,9 @@
       }
 
       nav {
+        height: 100%;
         ul {
+          height: 100%;
           position: static;
           flex-direction: row;
           padding-top: 0;
@@ -200,6 +218,15 @@
           background-color: white;
           border: none;
           color: black;
+
+          .about-mobile,
+          .projects-mobile {
+            display: none;
+          }
+
+          .about-projects-desktop {
+            display: flex;
+          }
         }
 
         li {

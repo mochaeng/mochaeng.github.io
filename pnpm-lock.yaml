@@ -23,9 +23,9 @@ importers:
       '@fontsource/acme':
         specifier: ^5.0.19
         version: 5.0.19
-      '@fontsource/homemade-apple':
-        specifier: ^5.0.19
-        version: 5.0.19
+      '@fontsource/pacifico':
+        specifier: ^5.0.13
+        version: 5.0.13
       astro:
         specifier: ^4.11.5
         version: 4.11.5(less@4.2.0)(typescript@5.5.3)
@@ -386,8 +386,8 @@ packages:
   '@fontsource/acme@5.0.19':
     resolution: {integrity: sha512-Z4iq1xDJ8VASDhR7pq/NU9puVbtr1HBywDDgC1hE9uIMz+RVTBwe49tEE/gjj8s8Z+fUJh4S1wDXh4Rpx/Sz0g==}
 
-  '@fontsource/homemade-apple@5.0.19':
-    resolution: {integrity: sha512-KV2NnmJWsPDgMKPZ+fmO3Z3niuxKw732g2nru9NtVkyYd5krUHDTxRID2VFDWJh7yQwLmUyt1FFqN/10kC00lQ==}
+  '@fontsource/pacifico@5.0.13':
+    resolution: {integrity: sha512-E7YdFyuIYLfxuOZeRzKotZf2mirl52JY8kN3qfwwM7fT+ndYDnOBAb/nvYvPJIks2sjGwW00hYmJNNTvOmZRDg==}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -2614,7 +2614,7 @@ snapshots:
 
   '@fontsource/acme@5.0.19': {}
 
-  '@fontsource/homemade-apple@5.0.19': {}
+  '@fontsource/pacifico@5.0.13': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:

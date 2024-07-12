@@ -10,18 +10,18 @@ import { projectTopics } from "../scripts/cards.ts";
   >
     {
       projectTopics.map((topic) => (
-        <article class="mt-10 p-3 flex flex-col gap-2 w-full text-center">
+        <section class="mt-10 flex flex-col items-center justify-center p-4 gap-4 w-full text-center">
           <h1 class="text-6xl">{topic.name}</h1>
-          <p class="text-xl">{topic.description}</p>
+          <p class="text-xl max-w-prose">{topic.description}</p>
           <div class="mt-4 flex justify-center gap-4 flex-wrap">
             {topic.cards.map((card) => (
-              <ProjectCard {card} />
+              <ProjectCard {card} className="bg-main text-black" />
             ))}
           </div>
-        </article>
+        </section>
       ))
     }
   </main>
-
-  <style></style>
 </Layout>
+
+<style></style>

@@ -1,4 +1,6 @@
 import chaeyoung from "../assets/chaeyoung.jpg";
+import farmcode from "../assets/projects/farm-code.png";
+import flscheme from "../assets/projects/fl-scheme.png";
 
 export const projectTopics = [
   {
@@ -8,19 +10,23 @@ export const projectTopics = [
     cards: [
       {
         title: "Federated Learning scheme",
-        badges: ["Python", "Pytorch", "Web-sockets"],
+        badges: ["Python", "Pytorch", "Sockets"],
         description:
-          "I develop a Federated Learning system using Pytorch and Python web-sockets. Clients can training a ML model while mantain their data privacy",
-        img: { src: chaeyoung.src, alt: "Son chaeyoung from twice" },
-        links: [{ url: "github", name: "github" }],
+          "A Federated Learning system using PyTorch and Python WebSockets. Clients can train an ML model while maintaining their data privacy.",
+        img: { src: flscheme.src, alt: "Son chaeyoung from twice" },
+        links: [
+          { url: "https://github.com/mochaeng/FL-System", name: "GitHub" },
+        ],
       },
       {
-        title: "PhoniexFL",
-        badges: ["Machine Learning", "Python", "Web-sockets"],
+        title: "PhoenixFL",
+        badges: ["Python", "Pytorch", "RabbitMQ", "Pandas", "Flower"],
         description:
-          "I develop a Federated Learning intruder detector capable of training a more robust model while maitaining user data privacy in non-IID settings.",
+          "A distributed system for intruder detection based on Federated Learning.",
         img: { src: chaeyoung.src, alt: "Son chaeyoung from twice" },
-        links: [{ url: "github", name: "github" }],
+        links: [
+          { url: "https://github.com/mochaeng/PhoenixFL", name: "GitHub" },
+        ],
       },
     ],
   },
@@ -31,9 +37,9 @@ export const projectTopics = [
       {
         title: "",
         badges: [],
-        description: "For now, enjoy a chaeyoung photo",
+        description: "For now enjoy a chaeyoung photo",
         img: { src: chaeyoung.src, alt: "Son chaeyoung from twice" },
-        links: [{ url: "github", name: "github" }],
+        links: [{ url: "github", name: "GitHub" }],
       },
     ],
   },
@@ -46,9 +52,15 @@ export const projectTopics = [
         title: "FarmCode",
         badges: ["Godot", "C#"],
         description:
-          "I develop a game to teach programming logic trough a block based approach. The game was test by 30 students in a class and demonstrated a effected result.",
-        img: { src: chaeyoung.src, alt: "Son chaeyoung from twice" },
-        links: [{ url: "https://mochaeng.itch.io/farmcode", name: "itch.io" }],
+          "A game to teach programming logic through a block-based approach. The game was tested by 30 students in a class and showed effective results.",
+        img: {
+          src: farmcode.src,
+          alt: "Starting screen from the FarmCode game.",
+        },
+        links: [
+          { url: "https://github.com/mochaeng/IHM", name: "GitHub" },
+          { url: "https://mochaeng.itch.io/farmcode", name: "Play" },
+        ],
       },
     ],
   },

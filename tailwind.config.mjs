@@ -9,6 +9,10 @@ export default {
         border: "hsl(var(--color-border))",
         text: "hsl(var(--color-text))",
         mainAccent: "hsl(var(--main-accent))",
+        card_1: "hsl(var(--card-color-1))",
+        card_2: "hsl(var(--card-color-2))",
+        card_3: "hsl(var(--card-color-3))",
+        index: "hsl(var(--color-index))",
       },
       borderRadius: {
         base: "5px",
