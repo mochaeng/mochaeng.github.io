@@ -41,48 +41,36 @@
   }
 </script>
 
-<header class="bg-white fixed top-0 h-16 border-2 border-border w-full">
+<header class="bg-header fixed h-20 border-b-2 border-border w-full p-2">
   <div
-    class="wrapper max-w-screen-xl h-full mx-auto flex items-center p-2 gap-4"
+    class="wrapper max-w-screen-xl h-full mx-auto flex items-center justify-between p-2 gap-2"
   >
     <div class="hamburguer-open z-10" aria-expanded={isAriaExpanded}>
       <Button on:click={openHamburguer}>
         <span class="sr-only">Open Menu</span>
-        <Menu size={32} />
+        <Menu size={32} class="dark:invert" />
       </Button>
     </div>
 
     <div class="hamburguer-close z-10" aria-expanded={isAriaExpanded}>
       <Button on:click={closeHamburguer}>
         <span class="sr-only">Close Menu</span>
-        <X size={32} />
+        <X size={32} class="dark:invert" />
       </Button>
     </div>
 
-    <div class="logo">
-      <a href="/" class="text-3xl font-bold mr-10">L. C.</a>
+    <div class="logo text-text">
+      <a href="/" class="text-3xl font-bold text-center">L. C.</a>
     </div>
 
     <div class="overlay" data-visible={isAriaExpanded}></div>
 
-    <nav class="text-text flex-1">
-      <ul class="z-50" data-visible={isAriaExpanded}>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li class="about-mobile"><a href="/about">About</a></li>
-        <li class="projects-mobile"><a href="/projects">Projects</a></li>
-        <div
-          class="about-projects-desktop hidden h-full items-center justify-end text-xl flex-1"
-        >
-          <a
-            class="h-full flex items-center px-10 border-l-2 border-border bg-white hover:bg-main"
-            href="/about">About</a
-          >
-          <a
-            class="h-full border-l-2 border-r-2 border-border px-10 flex items-center bg-black text-white hover:bg-main"
-            href="/projects">Projects</a
-          >
-        </div>
+    <nav class="text-text flex-1" data-visible={isAriaExpanded}>
+      <ul class="z-50 bg-header" data-visible={isAriaExpanded}>
+        <li><a class="text-2xl" href="/">Home</a></li>
+        <li><a class="text-2xl" href="/blog">Blog</a></li>
+        <li><a class="text-2xl" href="/about">About</a></li>
+        <li><a class="text-2xl" href="/projects">Projects</a></li>
       </ul>
     </nav>
 
@@ -90,7 +78,7 @@
       <Button on:click={toggleTheme}>
         <span class="sr-only">Toggle Theme</span>
         {#if isDark}
-          <Moon size={32} />
+          <Moon size={32} class="dark:invert" />
         {:else}
           <Sun size={32} />
         {/if}
@@ -144,18 +132,22 @@
       right: 2rem;
     }
 
+    nav[data-visible="true"] {
+      display: block;
+    }
+
     nav {
+      display: none;
       ul {
         position: fixed;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 2.4rem;
         inset: 0 30% 0 0;
-        padding-top: 10rem;
+        padding-top: 8rem;
         font-size: 1.25rem;
         border: 4px solid black;
-        background-color: hsl(var(--color-background));
         transform: translate(-100%);
       }
 
@@ -207,6 +199,7 @@
       }
 
       nav {
+        display: block;
         height: 100%;
         ul {
           height: 100%;
@@ -214,23 +207,22 @@
           flex-direction: row;
           padding-top: 0;
           transform: translate(0);
-          background-color: white;
           border: none;
-          color: black;
+          justify-content: center;
 
-          .about-mobile,
-          .projects-mobile {
-            display: none;
-          }
+          // .about-mobile,
+          // .projects-mobile {
+          //   display: none;
+          // }
 
-          .about-projects-desktop {
-            display: flex;
-          }
+          // .about-projects-desktop {
+          //   display: flex;
+          // }
         }
 
         li {
           a::after {
-            background-color: black;
+            background-color: hsl(var(--color-text));
           }
         }
       }

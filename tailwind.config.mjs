@@ -9,6 +9,8 @@ export default {
         border: "hsl(var(--color-border))",
         text: "hsl(var(--color-text))",
         mainAccent: "hsl(var(--main-accent))",
+        header: "hsl(var(--header-bg))",
+        secondaryBlack: "hsl(var(--secondary-black))",
         card_1: "hsl(var(--card-color-1))",
         card_2: "hsl(var(--card-color-2))",
         card_3: "hsl(var(--card-color-3))",

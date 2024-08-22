@@ -7,48 +7,22 @@ import A from "../components/ui/A.svelte";
 ---
 
 <Layout title="Mochaeng <3">
-  <div class="svg1 absolute right-[20%] bottom-[15%] hidden">
-    <svg
-      viewBox="0 0 261 260"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-[80px]"
-    >
-      <path
-        d="M138.989 127.588C300.42 84.3019 254.754 5.24637 136.609 123.454C254.816 5.24637 175.698 -40.3578 132.474 121.073C175.761 -40.3578 84.4272 -40.3578 127.651 121.073C84.3645 -40.4204 5.309 5.24636 123.454 123.391C5.309 5.24636 -40.3578 84.3019 121.073 127.588C-40.3578 84.3019 -40.3578 175.635 121.073 132.412C-40.3578 175.698 5.309 254.754 123.454 136.546C5.24637 254.754 84.3645 300.358 127.588 138.927C84.3019 300.358 175.635 300.358 132.412 138.927C175.698 300.358 254.754 254.691 136.546 136.546C254.754 254.754 300.358 175.635 138.927 132.412C300.42 175.635 300.42 84.3019 138.989 127.588Z"
-        fill="#C4A1FF"></path>
-    </svg>
-  </div>
-
-  <div class="svg2 hidden">
-    <svg
-      viewBox="0 0 64 65"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-[80px] absolute left-[20%] top-[15%]"
-    >
-      <path
-        d="M64 32.5L46.7803 26.38L54.6324 9.86761L38.12 17.7197L32 0.5L25.88 17.7197L9.36761 9.86761L17.2197 26.38L0 32.5L17.2197 38.62L9.36761 55.1324L25.88 47.2803L32 64.5L38.12 47.2803L54.6324 55.1324L46.7803 38.62L64 32.5Z"
-        fill="white"></path>
-    </svg>
-  </div>
-
   <main class="flex-1 text-text text-balance max-w-screen-xl">
     <div class="first">
       <div
         class="presentation info flex flex-col items-center p-4 bg-index text-black"
       >
         <h1 class="text-6xl text-center">
-          <span class="presentation">
+          <span class="presentation text-text">
             Hi, I'm Luiz Campos.
-            <span class="text-5xl font-bold">(@mochaeng)</span>
+            <span class="at text-5xl font-bold">(@mochaeng)</span>
           </span>
         </h1>
-        <p class="text-3xl mt-8 text-center">
+        <p class="text-3xl mt-8 text-center text-text">
           Software Developer based in Brazil, linux enjoyer, docs reader, and
           terminals lover.
         </p>
-        <div class="buttons p-4 flex gap-6">
+        <div class="p-4 flex gap-6">
           <A href="/projects" className="bg-main p-3 font-bold text-xl w-28"
             >Projects</A
           >
@@ -86,6 +60,12 @@ import A from "../components/ui/A.svelte";
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      .info {
+        background-color: transparent;
+        .at {
+          font-size: 2.5rem;
+        }
+      }
     }
 
     .second {
@@ -108,6 +88,10 @@ import A from "../components/ui/A.svelte";
           border-color: hsl(var(--color-border));
           border-radius: 5px;
           box-shadow: 4px 4px 0px 0px #000;
+          background-color: hsl(var(--color-index));
+          .at {
+            font-size: 3rem;
+          }
         }
       }
     }
@@ -131,13 +115,6 @@ import A from "../components/ui/A.svelte";
           max-width: 250px;
         }
       }
-    }
-  }
-
-  @media (min-width: 973px) {
-    .svg1,
-    .svg2 {
-      display: block;
     }
   }
 </style>

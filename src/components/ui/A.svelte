@@ -10,7 +10,7 @@
   {href}
   {target}
   class={cn(
-    "bg-white text-center rounded-base border-border text-black border-2 shadow-brute hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all hover:shadow-none cursor-pointer",
+    "bg-header text-center rounded-base border-border text-black border-2 shadow-brute hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all hover:shadow-none cursor-pointer",
     className
   )}
   {...$$restProps}

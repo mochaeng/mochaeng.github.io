@@ -6,22 +6,35 @@
   font-family: "DM Sans Variable", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--header-bg));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--scroll-bg));
+}
+
 @layer base {
   :root {
-    /* yellow/orange  */
-    --color-main: 262, 100%, 82%;
+    /* --color-main: 27 98% 63%; */
     /* --color-main: 219, 100%, 94%; */
     /* --color-main: 262 100% 82%; */
-    --color-background: 169, 57%, 91%;
+    --color-main: 220, 75%, 73%;
     /* --color-background: 221, 42%, 91%; */
+    --color-background: 39, 100%, 94%;
     --main-accent: 27 98% 50%;
-
     --color-index: 100 100% 100%;
 
-    /* pastel  */
-    /* --color-main: 262 100% 82%;
-    --color-background: 169 57% 91%;
-    --main-accent: 262 100% 70%; */
+    --header-bg: 100 100% 100%;
+    --scroll-bg: 0, 0%, 11%;
 
     --color-text: 0 0% 0%;
     --color-border: 0 0% 0%;
@@ -29,9 +42,13 @@
   }
 
   .dark {
-    --color-background: 217, 19%, 27%;
-    --color-main: 262, 100%, 82%;
-    --color-text: 0, 0%, 100%;
-    --color-index: 100 100% 100%;
+    --color-background: 230, 13%, 18%;
+    /* --color-background: 217, 19%, 27%; */
+    --header-bg: 0, 0%, 11%;
+    --secondary-black: 0, 0%, 11%;
+    /* --color-main: 262, 100%, 82%; */
+    --scroll-bg: 100 100% 100%;
+    --color-text: 70, 16%, 93%;
+    --color-index: 0 0% 11%;
   }
 }

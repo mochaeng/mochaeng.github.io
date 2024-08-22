@@ -34,8 +34,13 @@ const infos = [
   <div class="flex mx-auto gap-5">
     {
       infos.map((info) => (
-        <A href={info.url} target="_blank" className="bg-white p-2 h-14">
-          <img width={34} src={info.icon.src} alt={info.alt} />{" "}
+        <A href={info.url} target="_blank" className="p-2 h-14 ">
+          <img
+            class="dark:invert"
+            width={34}
+            src={info.icon.src}
+            alt={info.alt}
+          />{" "}
         </A>
       ))
     }
