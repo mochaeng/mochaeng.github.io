@@ -1,14 +1,15 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.svelte";
+import "../styles/global.css";
+import "@fontsource-variable/dm-sans";
+
 type Props = {
   title: string;
 };
 
 const { title } = Astro.props;
-import { ViewTransitions } from "astro:transitions";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.svelte";
-import "../styles//global.css";
-import "@fontsource-variable/dm-sans";
 ---
 
 <!doctype html>

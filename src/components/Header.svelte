@@ -7,6 +7,8 @@
   let isAriaExpanded = false;
   let isDark = document.documentElement.classList.contains("dark");
   let media = window.matchMedia("(width < 48em)");
+  let header: HTMLHeadElement;
+  let prevScrollpos = 0;
 
   onMount(() => {
     media.addEventListener("change", function (event) {
@@ -41,7 +43,35 @@
   }
 </script>
 
-<header class="bg-header fixed h-20 border-b-2 border-border w-full p-2">
+<svelte:window
+  on:scroll={() => {
+    if (!header) {
+      return;
+    }
+
+    if (window.innerWidth >= 768) {
+      header.style.top = "0";
+      header.style.transition = "top 0.3s ease-out";
+      return;
+    }
+
+    let currentScrollPos = window.scrollY;
+    console.log(currentScrollPos);
+    if (prevScrollpos > currentScrollPos || currentScrollPos < 43) {
+      header.style.top = "0";
+      header.style.transition = "top 0.3s ease-out";
+    } else {
+      header.style.transition = "top 0.3s ease-out";
+      header.style.top = "-80px";
+    }
+    prevScrollpos = currentScrollPos;
+  }}
+/>
+
+<header
+  class="bg-header fixed h-20 border-b-2 border-border w-full p-2"
+  bind:this={header}
+>
   <div
     class="wrapper max-w-screen-xl h-full mx-auto flex items-center justify-between p-2 gap-2"
   >

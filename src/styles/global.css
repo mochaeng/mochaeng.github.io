@@ -24,31 +24,35 @@
 
 @layer base {
   :root {
-    /* --color-main: 27 98% 63%; */
-    /* --color-main: 219, 100%, 94%; */
-    /* --color-main: 262 100% 82%; */
     --color-main: 220, 75%, 73%;
-    /* --color-background: 221, 42%, 91%; */
-    --color-background: 39, 100%, 94%;
     --main-accent: 27 98% 50%;
+    --color-border: 0 0% 0%;
+    --shadow: 4px 4px 0px 0px #000;
+
+    --color-background: 39, 100%, 94%;
+    --color-text: 0 0% 0%;
     --color-index: 100 100% 100%;
 
     --header-bg: 100 100% 100%;
     --scroll-bg: 0, 0%, 11%;
 
-    --color-text: 0 0% 0%;
-    --color-border: 0 0% 0%;
-    --shadow: 4px 4px 0px 0px #000;
+    --card-1: 220, 75%, 73%;
+
+    --card-border: 0, 0%, 0%;
   }
 
   .dark {
-    --color-background: 230, 13%, 18%;
-    /* --color-background: 217, 19%, 27%; */
-    --header-bg: 0, 0%, 11%;
     --secondary-black: 0, 0%, 11%;
-    /* --color-main: 262, 100%, 82%; */
-    --scroll-bg: 100 100% 100%;
+
+    --color-background: 228, 15%, 13%;
     --color-text: 70, 16%, 93%;
     --color-index: 0 0% 11%;
+
+    --header-bg: 0, 0%, 11%;
+    --scroll-bg: 100 100% 100%;
+
+    --card-1: 220, 75%, 73%;
+
+    --card-border: 100, 100%, 100%;
   }
 }

@@ -6,26 +6,26 @@ export const projectTopics = [
   {
     name: "Machine Learning",
     description:
-      "I have experience working with Machine learning and Federated Learning. I can work with libraries such as pandas, pytorch and flower",
+      "I have experience in machine learning and federated learning, with proficiency in libraries like  PyTorch, Pandas, Dask, and Flower.",
     cards: [
       {
-        title: "Federated Learning scheme",
-        badges: ["Python", "Pytorch", "Sockets"],
-        description:
-          "A Federated Learning system using PyTorch and Python WebSockets. Clients can train an ML model while maintaining their data privacy.",
-        img: { src: flscheme.src, alt: "Son chaeyoung from twice" },
-        links: [
-          { url: "https://github.com/mochaeng/FL-System", name: "GitHub" },
-        ],
-      },
-      {
         title: "PhoenixFL",
-        badges: ["Python", "Pytorch", "RabbitMQ", "Pandas", "Flower"],
+        badges: ["PyTorch", "RabbitMQ", "Pandas", "Flower"],
         description:
           "A distributed system for intruder detection based on Federated Learning.",
         img: { src: chaeyoung.src, alt: "Son chaeyoung from twice" },
         links: [
           { url: "https://github.com/mochaeng/PhoenixFL", name: "GitHub" },
+        ],
+      },
+      {
+        title: "Federated Learning scheme",
+        badges: ["PyTorch", "Web-Sockets"],
+        description:
+          "A privacy preserved Federated Learning scheme with PyTorch and Web-Sockets.",
+        img: { src: flscheme.src, alt: "Son chaeyoung from twice" },
+        links: [
+          { url: "https://github.com/mochaeng/FL-System", name: "GitHub" },
         ],
       },
     ],
@@ -46,7 +46,7 @@ export const projectTopics = [
   {
     name: "Game Dev",
     description:
-      "I an amauter game developer. I'm currently learning Godot. What I like about Game Dev is being able to apply both creative and analytical thinking to solve problems.",
+      "I'm an amateur game developer, currently learning Godot. What I like about Game Dev is being able to apply both creative and analytical thinking to solve problems.",
     cards: [
       {
         title: "FarmCode",
