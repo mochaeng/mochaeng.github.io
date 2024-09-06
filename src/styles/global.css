@@ -24,7 +24,7 @@
 
 @layer base {
   :root {
-    --color-main: 220, 75%, 73%;
+    --color-main: 219, 100%, 94%;
     --main-accent: 27 98% 50%;
     --color-border: 0 0% 0%;
     --shadow: 4px 4px 0px 0px #000;
@@ -36,22 +36,29 @@
     --header-bg: 100 100% 100%;
     --scroll-bg: 0, 0%, 11%;
 
-    --card-1: 220, 75%, 73%;
+    --card-1: var(--color-main);
+    --post-bg: var(--header-bg);
+    --blog-bg: 219, 100%, 94%;
+    --text-blog: 0, 0%, 22%;
 
     --card-border: 0, 0%, 0%;
   }
 
   .dark {
+    --color-main: 262, 100%, 82%;
     --secondary-black: 0, 0%, 11%;
 
-    --color-background: 228, 15%, 13%;
+    --color-background: 0, 0%, 9%;
     --color-text: 70, 16%, 93%;
-    --color-index: 0 0% 11%;
+    --color-index: 0 0% 13%;
 
     --header-bg: 0, 0%, 11%;
     --scroll-bg: 100 100% 100%;
 
-    --card-1: 220, 75%, 73%;
+    --card-1: var(--color-main);
+    --post-bg: 0, 0%, 13%;
+    --blog-bg: var(--color-main);
+    --text-blog: 0, 0%, 95%;
 
     --card-border: 100, 100%, 100%;
   }

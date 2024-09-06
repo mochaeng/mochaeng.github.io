@@ -1,3 +1,31 @@
 h1 {
+  /* font-weight: bold; */
+}
+
+h2 {
+  font-weight: 2rem;
   font-weight: bold;
+  margin-bottom: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+article > p {
+  font-size: 1.25rem /* 24px */;
+  line-height: 1.75rem /* 32px */;
+}
+
+pre {
+  margin: 0.75rem 0;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  /* Optional, if you also want font styles */
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
 }

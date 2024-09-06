@@ -10,19 +10,17 @@ const pageTitle = "Tag Index";
   <div class="tags">
     {
       tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
+        <p>
+          <a class="text-white" href={`/tags/${tag}`}>
+            {tag}
+          </a>
         </p>
       ))
     }
   </div>
 </Layout>
 
-<style>
-  a {
-    color: #00539f;
-  }
-
+<!-- <style>
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -36,4 +34,4 @@ const pageTitle = "Tag Index";
     font-size: 1.15em;
     background-color: #f8fcfd;
   }
-</style>
+</style> -->

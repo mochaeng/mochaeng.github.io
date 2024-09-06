@@ -51,7 +51,7 @@
 
     if (window.innerWidth >= 768) {
       header.style.top = "0";
-      header.style.transition = "top 0.3s ease-out";
+      header.style.transition = "top 0.5s ease-out";
       return;
     }
 
@@ -59,9 +59,9 @@
     console.log(currentScrollPos);
     if (prevScrollpos > currentScrollPos || currentScrollPos < 43) {
       header.style.top = "0";
-      header.style.transition = "top 0.3s ease-out";
+      header.style.transition = "top 0.5s ease-out";
     } else {
-      header.style.transition = "top 0.3s ease-out";
+      header.style.transition = "top 0.5s ease-out";
       header.style.top = "-80px";
     }
     prevScrollpos = currentScrollPos;
@@ -195,7 +195,7 @@
           position: absolute;
           width: 100%;
           height: 2px;
-          background-color: hsl(var(--color-text));
+          background-color: hsl(var(--color-main));
           transform: scaleX(0);
           bottom: 0;
           left: 0;
@@ -252,7 +252,7 @@
 
         li {
           a::after {
-            background-color: hsl(var(--color-text));
+            background-color: hsl(var(--color-main));
           }
         }
       }

@@ -1,46 +1,35 @@
 ---
 import Layout from "../layouts/Base.astro";
+import { formatDate } from "../scripts/utils";
 import "../styles/blog.css";
 
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <main class="px-4 text-text pt-20 mt-4 max-w-screen-xl">
-    <h1>{frontmatter.title}</h1>
-    <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
-    <p>Written by {frontmatter.author}</p>
+  <main
+    class="ml-1 mr-2 p-4 text-blog mt-24 max-w-screen-xl border-border border-2 shadow-brute rounded-base bg-postBg"
+  >
+    <div class="flex flex-col gap-2">
+      <h1 class="text-4xl font-bold">{frontmatter.title}</h1>
+      <p>Published on: {formatDate(frontmatter.pubDate)}</p>
+      <p>Written by <span class="font-bold">{frontmatter.author}</span></p>
 
-    <div class="tags">
-      {
-        frontmatter.tags.map((tag: any) => (
-          <p class="tag">
-            <a href={`/tags/${tag}`}>{tag}</a>
-          </p>
-        ))
-      }
+      <!-- <div class="flex gap-2">
+        {
+          frontmatter.tags.map((tag: any) => (
+            <p class="bg-main h-full p-1 rounded-lg">
+              <a class="text-black h-full w-full bg-main" href={`/tags/${tag}`}>
+                #{tag}
+              </a>
+            </p>
+          ))
+        }
+      </div> -->
     </div>
 
-    <slot />
+    <article class="text-2xl mt-6">
+      <slot />
+    </article>
   </main>
 </Layout>
-
-<style>
-  a {
-    color: #00539f;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
-  }
-</style>

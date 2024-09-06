@@ -15,6 +15,9 @@ export default {
         card_1: "hsl(var(--card-1))",
         card_2: "hsl(var(--card-2))",
         card_3: "hsl(var(--card-3))",
+        postBg: "hsl(var(--post-bg))",
+        blogBg: "hsl(var(--blog-bg))",
+        blog: "hsl(var(--text-blog))",
         index: "hsl(var(--color-index))",
       },
       borderRadius: {
