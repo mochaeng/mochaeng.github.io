@@ -19,12 +19,14 @@ export default {
         blogBg: "hsl(var(--blog-bg))",
         blog: "hsl(var(--text-blog))",
         index: "hsl(var(--color-index))",
+        project: "hsl(var(--text-project))",
       },
       borderRadius: {
         base: "5px",
       },
       boxShadow: {
-        brute: "4px 4px 0px 0px #000",
+        // brute: "4px 4px 0px 0px #000",
+        brute: "var(--shadow)",
       },
       translate: {
         boxShadowX: "4px",

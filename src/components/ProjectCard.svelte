@@ -21,7 +21,7 @@
 </script>
 
 <article
-  class="max-w-[500px] wrapper flex flex-col border-2 border-border shadow-brute text-text"
+  class="max-w-[500px] wrapper flex flex-col border-2 border-border shadow-brute text-project"
 >
   <div
     class={twMerge(
@@ -41,7 +41,7 @@
   </div>
 
   <div
-    class="bg-header p-2 h-full w-full flex flex-col justify-center items-center border-t-2 border-cardBorder"
+    class="bg-index p-2 h-full w-full flex flex-col justify-center items-center border-t-2 border-cardBorder"
   >
     <p class="font-bold text-2xl">{card.title}</p>
 

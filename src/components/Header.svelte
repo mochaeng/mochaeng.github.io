@@ -3,18 +3,29 @@
   import { Menu, Moon, Sun, X } from "lucide-svelte";
   import { onMount } from "svelte";
   import Button from "./ui/Button.svelte";
+  import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
 
   let isAriaExpanded = false;
   let isDark = document.documentElement.classList.contains("dark");
   let media = window.matchMedia("(width < 48em)");
   let header: HTMLHeadElement;
+  let body: HTMLBodyElement;
   let prevScrollpos = 0;
 
   onMount(() => {
     media.addEventListener("change", function (event) {
       setupNavbar(event);
     });
+    body = document.querySelector("body")!;
   });
+
+  $: {
+    if (isAriaExpanded) {
+      disableBodyScroll(body);
+    } else {
+      enableBodyScroll(body);
+    }
+  }
 
   function setupNavbar(event: MediaQueryListEvent) {
     if (!event.matches) {
@@ -51,7 +62,7 @@
 
     if (window.innerWidth >= 768) {
       header.style.top = "0";
-      header.style.transition = "top 0.5s ease-out";
+      header.style.transition = "top 0.35s ease-out";
       return;
     }
 
@@ -59,9 +70,9 @@
     console.log(currentScrollPos);
     if (prevScrollpos > currentScrollPos || currentScrollPos < 43) {
       header.style.top = "0";
-      header.style.transition = "top 0.5s ease-out";
+      header.style.transition = "top 0.35s ease-out";
     } else {
-      header.style.transition = "top 0.5s ease-out";
+      header.style.transition = "top 0.35s ease-out";
       header.style.top = "-80px";
     }
     prevScrollpos = currentScrollPos;
@@ -239,15 +250,6 @@
           transform: translate(0);
           border: none;
           justify-content: center;
-
-          // .about-mobile,
-          // .projects-mobile {
-          //   display: none;
-          // }
-
-          // .about-projects-desktop {
-          //   display: flex;
-          // }
         }
 
         li {

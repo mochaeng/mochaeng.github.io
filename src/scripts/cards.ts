@@ -35,11 +35,14 @@ export const projectTopics = [
     description: "I will add web dev projects.",
     cards: [
       {
-        title: "",
-        badges: [],
-        description: "For now enjoy a chaeyoung photo",
+        title: "Sapphire",
+        badges: ["Svelte", "Drizzle", "Supabase"],
+        description:
+          "A social media platform design to be a safe place in a modern web.",
         img: { src: chaeyoung.src, alt: "Son chaeyoung from twice" },
-        links: [{ url: "github", name: "GitHub" }],
+        links: [
+          { url: "https://github.com/mochaeng/Sapphire", name: "GitHub" },
+        ],
       },
     ],
   },

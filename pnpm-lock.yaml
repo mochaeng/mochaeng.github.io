@@ -29,6 +29,9 @@ importers:
       astro:
         specifier: ^4.11.5
         version: 4.11.5(less@4.2.0)(typescript@5.5.3)
+      body-scroll-lock:
+        specifier: 4.0.0-beta.0
+        version: 4.0.0-beta.0
       lucide-svelte:
         specifier: ^0.399.0
         version: 0.399.0(svelte@4.2.18)
@@ -45,6 +48,9 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
     devDependencies:
+      '@types/body-scroll-lock':
+        specifier: ^3.1.2
+        version: 3.1.2
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -653,6 +659,9 @@ packages:
   '@types/babel__traverse@7.20.6':
     resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
 
+  '@types/body-scroll-lock@3.1.2':
+    resolution: {integrity: sha512-ELhtuphE/YbhEcpBf/rIV9Tl3/O0A0gpCVD+oYFSS8bWstHFJUgA4nNw1ZakVlRC38XaQEIsBogUZKWIPBvpfQ==}
+
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
@@ -789,6 +798,9 @@ packages:
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
+
+  body-scroll-lock@4.0.0-beta.0:
+    resolution: {integrity: sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==}
 
   boxen@7.1.1:
     resolution: {integrity: sha512-2hCgjEmP8YLWQ130n2FerGv7rYpfBmnmp9Uy2Le1vge6X3gZIfSmEzP5QTDElFxcvVcXlEn8Aq6MU/PZygIOog==}
@@ -2835,6 +2847,8 @@ snapshots:
     dependencies:
       '@babel/types': 7.24.7
 
+  '@types/body-scroll-lock@3.1.2': {}
+
   '@types/cookie@0.6.0': {}
 
   '@types/debug@4.1.12':
@@ -3060,6 +3074,8 @@ snapshots:
   base-64@1.0.0: {}
 
   binary-extensions@2.3.0: {}
+
+  body-scroll-lock@4.0.0-beta.0: {}
 
   boxen@7.1.1:
     dependencies:

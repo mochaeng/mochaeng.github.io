@@ -12,6 +12,7 @@ h2 {
 article > p {
   font-size: 1.25rem /* 24px */;
   line-height: 1.75rem /* 32px */;
+  text-align: justify;
 }
 
 pre {

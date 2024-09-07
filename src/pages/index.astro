@@ -61,7 +61,12 @@ import A from "../components/ui/A.svelte";
       align-items: center;
       justify-content: center;
       .info {
-        background-color: transparent;
+        width: 93%;
+        border-width: 2px;
+        border-color: hsl(var(--color-border));
+        border-radius: 5px;
+        box-shadow: 4px 4px 0px 0px #000;
+        background-color: hsl(var(--color-index));
         .at {
           font-size: 2.5rem;
         }
@@ -84,11 +89,6 @@ import A from "../components/ui/A.svelte";
       .first {
         .info {
           width: 90%;
-          border-width: 2px;
-          border-color: hsl(var(--color-border));
-          border-radius: 5px;
-          box-shadow: 4px 4px 0px 0px #000;
-          background-color: hsl(var(--color-index));
           .at {
             font-size: 3rem;
           }
