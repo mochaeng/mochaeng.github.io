@@ -1,41 +1,41 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.svelte";
-import "../styles/global.css";
-import "@fontsource-variable/dm-sans";
+import { ViewTransitions } from 'astro:transitions'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.svelte'
+import '../styles/global.css'
+import '@fontsource-variable/dm-sans'
 
 type Props = {
-  title: string;
-};
+    title: string
+}
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Mochaeng is a software developer from Brazil"
-    />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml+ico" href="favicon.png" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <ViewTransitions />
-  </head>
-  <body class="bg-background overflow-auto">
-    <div
-      class="absolute inset-0 h-full w-full flex flex-col justify-between items-center gap-2"
-    >
-      <Header client:only="svelte" />
-      <slot />
-      <Footer />
-    </div>
-    <script>
-      import "../scripts/theme";
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Mochaeng is a software developer from Brazil"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml+ico" href="favicon.png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <ViewTransitions />
+    </head>
+    <body class="bg-background overflow-auto">
+        <div
+            class="absolute inset-0 h-full w-full flex flex-col justify-between items-center gap-2"
+        >
+            <Header client:only="svelte" />
+            <slot />
+            <Footer />
+        </div>
+        <script>
+            import '../scripts/theme'
+        </script>
+    </body>
 </html>

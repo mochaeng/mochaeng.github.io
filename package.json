@@ -10,13 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/svelte": "^5.6.0",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/svelte": "^5.7.1",
+    "@astrojs/tailwind": "^5.1.1",
     "@fontsource-variable/dm-sans": "^5.0.6",
     "@fontsource/acme": "^5.0.19",
     "@fontsource/pacifico": "^5.0.13",
-    "astro": "^4.11.5",
+    "astro": "^4.15.9",
     "body-scroll-lock": "4.0.0-beta.0",
     "lucide-svelte": "^0.399.0",
     "svelte": "^4.2.18",
@@ -27,6 +27,9 @@
   "devDependencies": {
     "@types/body-scroll-lock": "^3.1.2",
     "clsx": "^2.1.1",
-    "less": "^4.2.0"
+    "less": "^4.2.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "rough-notation": "^0.5.1"
   }
 }
