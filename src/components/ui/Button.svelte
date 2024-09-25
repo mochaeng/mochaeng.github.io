@@ -11,7 +11,7 @@
   on:mouseleave
   on:focus
   class={cn(
-    "bg-header rounded-base border-border text-black border-2 p-1 shadow-brute hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all hover:shadow-none",
+    "bg-buttons rounded-base border-border text-black border-2 p-1 shadow-brute hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all hover:shadow-none",
     className
   )}
   {...$$restProps}

@@ -20,6 +20,7 @@ export default {
         blog: "hsl(var(--text-blog))",
         index: "hsl(var(--color-index))",
         project: "hsl(var(--text-project))",
+        buttons: "hsl(var(--buttons-bg))"
       },
       borderRadius: {
         base: "5px",

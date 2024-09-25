@@ -61,7 +61,7 @@
     <div class="p-2 flex gap-4 w-full">
       {#each card.links as link}
         <A
-          className="p-2 flex-1 font-bold bg-white"
+          className="p-2 flex-1 font-bold bg-buttons"
           href={link.url}
           target="_blank">{link.name}</A
         >

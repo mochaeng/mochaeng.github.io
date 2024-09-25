@@ -1,22 +1,22 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import svelte from '@astrojs/svelte';
 
-import svelte from "@astrojs/svelte";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte()],
+  integrations: [tailwind(), svelte(), react({experimentalReactChildren: true})],
   markdown: {
     shikiConfig: {
-      // Choose from Shiki's built-in themes (or add your own)
       // https://shiki.style/themes
-      theme: "dracula",
+      theme: 'dracula',
       // Alternatively, provide multiple themes
       // See note below for using dual light/dark themes
       themes: {
-        light: "snazzy-light",
+        light: 'rose-pine-dawn',
         // dark: "min-dark",
-        dark: "rose-pine",
+        dark: 'rose-pine'
       },
       // Disable the default colors
       // https://shiki.style/guide/dual-themes#without-default-color
@@ -30,7 +30,7 @@ export default defineConfig({
       wrap: true,
       // Add custom transformers: https://shiki.style/guide/transformers
       // Find common transformers: https://shiki.style/packages/transformers
-      transformers: [],
-    },
-  },
+      transformers: []
+    }
+  }
 });

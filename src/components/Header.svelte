@@ -107,10 +107,10 @@
         <div class="overlay" data-visible={isAriaExpanded}></div>
 
         <nav class="text-text flex-1" data-visible={isAriaExpanded}>
-            <ul class="z-[9999999] bg-header" data-visible={isAriaExpanded}>
+            <ul class="z-50 bg-header" data-visible={isAriaExpanded}>
                 <li><a class="text-2xl" href="/">Home</a></li>
                 <li><a class="text-2xl" href="/blog">Blog</a></li>
-                <li><a class="text-2xl" href="/about">About</a></li>
+                <li><a class="text-2xl" href="/about" data-astro-reload>About</a></li>
                 <li><a class="text-2xl" href="/projects">Projects</a></li>
             </ul>
         </nav>
@@ -119,9 +119,9 @@
             <Button on:click={toggleTheme}>
                 <span class="sr-only">Toggle Theme</span>
                 {#if isDark}
-                    <Moon size={32} class="dark:invert" />
+                    <Moon size={32} class="" />
                 {:else}
-                    <Sun size={32} />
+                    <Sun size={32} class='' />
                 {/if}
             </Button>
         </div>

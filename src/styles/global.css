@@ -25,22 +25,24 @@
 
 @layer base {
   :root {
-    --color-main: 219, 100%, 94%;
+    --color-main: 300, 15%, 82%;
     --main-accent: 27 98% 50%;
-    --color-border: 0 0% 0%;
-    --shadow: 4px 4px 0px 0px #000;
+    --color-border: 300, 6%, 10%;
+    --shadow: 4px 4px 0px 0px hsl(var(--color-border));
 
-    --color-background: 39, 100%, 94%;
-    --color-text: 0 0% 0%;
+    --color-background: 300, 20%, 96%;
+    --color-text: 266, 9%, 15%;
     --color-index: 100 100% 100%;
 
-    --header-bg: 100 100% 100%;
+    /* --header-bg: 100 100% 100%; */
+    --header-bg: var(--color-main);
+    --buttons-bg: 100 100% 100%;;
     --scroll-bg: 0, 0%, 11%;
 
     --card-1: var(--color-main);
-    --post-bg: var(--header-bg);
-    --blog-bg: 219, 100%, 94%;
-    --text-blog: 0, 0%, 22%;
+    /* --post-bg: var(--header-bg); */
+    --blog-bg: 100 100% 100%;
+    --text-blog: var(--color-text);
 
     /* projects page */
     --text-project: 0, 0%, 0%;
@@ -50,20 +52,21 @@
 
   .dark {
     --color-main: 262, 100%, 82%;
-    --secondary-black: 0, 0%, 11%;
+    --secondary-black: 266, 9%, 15%;
     /* --color-border: 100 100% 100%; */
     /* --shadow: 4px 4px 0px 0px #f1f1f1; */
 
-    --color-background: 0, 0%, 9%;
-    --color-text: 70, 16%, 93%;
-    --color-index: 0 0% 13%;
+    --color-background: 300, 6%, 10%;
+    --color-text: 262, 14%, 89%;
+    --color-index: var(--secondary-black);
 
-    --header-bg: 0, 0%, 11%;
+    --header-bg: var(--secondary-black);
+    --buttons-bg: 100, 100%, 100%;
     --scroll-bg: 100 100% 100%;
 
     --card-1: var(--color-main);
     --post-bg: var(--color-index);
-    --blog-bg: var(--color-main);
+    --blog-bg: var(--secondary-black);
     --text-blog: 0, 0%, 95%;
 
     /* projects page */

@@ -3,7 +3,7 @@
     "tabWidth": 4,
     "semi": false,
     "singleQuote": true,
-    "plugins": ["prettier-plugin-astro", "prettier-plugin-astro"],
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-svelte"],
     "overrides": [
         {
             "files": "*.astro",
