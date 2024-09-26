@@ -27,7 +27,7 @@
   :root {
     --color-main: 300, 15%, 82%;
     --main-accent: 27 98% 50%;
-    --color-border: 300, 6%, 10%;
+    --color-border: var(--color-text);
     --shadow: 4px 4px 0px 0px hsl(var(--color-border));
 
     --color-background: 300, 20%, 96%;
@@ -36,12 +36,13 @@
 
     /* --header-bg: 100 100% 100%; */
     --header-bg: var(--color-main);
-    --buttons-bg: 100 100% 100%;;
+    --buttons-bg: var(--color-main);
     --scroll-bg: 0, 0%, 11%;
 
     --card-1: var(--color-main);
     /* --post-bg: var(--header-bg); */
-    --blog-bg: 100 100% 100%;
+    /* --blog-bg: 100 100% 100%; */
+    --blog-bg: var(--color-background);
     --text-blog: var(--color-text);
 
     /* projects page */

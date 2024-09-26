@@ -26,12 +26,12 @@ const { title } = Astro.props
         <title>{title}</title>
         <ViewTransitions />
     </head>
-    <body class="bg-background overflow-auto">
+    <body class="bg-background overflow-auto" >
         <div
             class="absolute inset-0 h-full w-full flex flex-col justify-between items-center gap-2"
         >
-            <Header client:only="svelte" />
-            <slot />
+            <Header client:only  />
+            <slot  />
             <Footer />
         </div>
         <script>

@@ -110,7 +110,7 @@
             <ul class="z-50 bg-header" data-visible={isAriaExpanded}>
                 <li><a class="text-2xl" href="/">Home</a></li>
                 <li><a class="text-2xl" href="/blog">Blog</a></li>
-                <li><a class="text-2xl" href="/about" data-astro-reload>About</a></li>
+                <li><a class="text-2xl" href="/about">About</a></li>
                 <li><a class="text-2xl" href="/projects">Projects</a></li>
             </ul>
         </nav>
@@ -188,7 +188,7 @@
                 inset: 0 30% 0 0;
                 padding-top: 8rem;
                 font-size: 1.25rem;
-                border: 4px solid black;
+                border: 4px solid hsl(var(--color-text));
                 transform: translate(-100%);
             }
 

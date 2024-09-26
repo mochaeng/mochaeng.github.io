@@ -21,7 +21,7 @@
 </script>
 
 <article
-  class="max-w-[500px] wrapper flex flex-col border-2 border-border shadow-brute text-project"
+  class="max-w-[500px] wrapper flex flex-col border-2 border-border shadow-brute text-text"
 >
   <div
     class={twMerge(
