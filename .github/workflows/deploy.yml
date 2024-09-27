@@ -27,10 +27,10 @@ jobs:
 
             - name: Upload Artifacts
               uses: actions/upload-pages-artifact@v3
-              # with:
-              # this should match the `pages` option in adapter-static options
-              # in svelte.config.js
-              # path: 'build/'
+              with:
+                  # this should match the `pages` option in adapter-static options
+                  # in svelte.config.js
+                  path: 'build/'
 
     deploy:
         needs: build_site
