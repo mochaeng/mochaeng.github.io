@@ -30,7 +30,7 @@ const { title } = Astro.props
         <div
             class="absolute inset-0 h-full w-full flex flex-col justify-between items-center gap-2"
         >
-            <Header client:only  />
+            <Header client:only="svelte"  />
             <slot  />
             <Footer />
         </div>
