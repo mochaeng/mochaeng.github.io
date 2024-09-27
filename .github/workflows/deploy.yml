@@ -1,35 +1,51 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    push:
+        branches: 'main'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository with git
-        uses: actions/checkout@v4
+    build_site:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
 
-      - name: Install, build and upload site
-        uses: withastro/action@v2
-        with:
-          node-version: 20
-          package-manager: pnpm@latest
+            - name: Install pnpm
+              uses: pnpm/action-setup@v3
+              with:
+                  version: 8
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+            - name: Install dependencies
+              run: bun install
+
+            - name: build
+              env:
+                  BASE_PATH: '/${{ github.event.repository.name }}'
+              run: |
+                  bun run check
+                  bun run build
+
+            - name: Upload Artifacts
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  # this should match the `pages` option in adapter-static options
+                  # in svelte.config.js
+                  path: 'build/'
+
+    deploy:
+        needs: build_site
+        runs-on: ubuntu-latest
+
+        permissions:
+            pages: write
+            id-token: write
+
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
+        steps:
+            - name: Deploy
+              id: deployment
+              uses: actions/deploy-pages@v4
