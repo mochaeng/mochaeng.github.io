@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-reduced-motion) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}
+
+* {
+	font-family: 'DM Sans Variable', sans-serif;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+::-webkit-scrollbar {
+	width: 16px;
+}
+
+::-webkit-scrollbar-button {
+	display: none;
+}
+
+::-webkit-scrollbar-track {
+	background: hsl(var(--header-bg));
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: hsl(var(--color-text));
+}
+
+@layer base {
+	:root {
+		--color-main: 300, 15%, 86%;
+		--main-accent: 27 98% 50%;
+		--color-border: var(--color-text);
+		--shadow: 4px 4px 0px 0px hsl(var(--color-border));
+
+		--color-background: 300, 20%, 96%;
+		--color-text: 300, 8%, 15%;
+		--color-index: 100 100% 100%;
+
+		/* --header-bg: 100, 100%, 100%; */
+		--header-bg: var(--color-main);
+		--buttons-bg: var(--color-main);
+		--scroll-bg: 0, 0%, 11%;
+
+		--card-1: var(--color-main);
+		/* --post-bg: var(--header-bg); */
+		/* --blog-bg: 100 100% 100%; */
+		--blog-bg: var(--color-background);
+		--text-blog: var(--color-text);
+
+		/* projects page */
+		--text-project: 0, 0%, 0%;
+
+		--card-border: 0, 0%, 0%;
+	}
+
+	.dark {
+		--color-main: 240, 21%, 12%;
+		--secondary-black: 266, 9%, 15%;
+		--color-border: 0, 0%, 0%;
+		--shadow: 4px 4px 0px 0px hsl(var(--color-border));
+
+		--color-background: 240, 21%, 15%;
+		--color-text: 243, 51%, 91%;
+		--color-index: var(--color-main);
+
+		--header-bg: var(--color-main);
+		--buttons-bg: 240, 21%, 10%;
+		--scroll-bg: 100 100% 100%;
+
+		--card-1: 232, 97%, 85%;
+		--post-bg: var(--color-index);
+		--blog-bg: var(--secondary-black);
+		--text-blog: 0, 0%, 95%;
+
+		/* projects page */
+		--text-project: 0, 0%, 95%;
+
+		--card-border: 100, 100%, 100%;
+	}
+}
