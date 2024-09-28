@@ -24,7 +24,8 @@ const config = {
 		csp: {
 			mode: 'hash',
 			directives: {
-				'script-src': ['self']
+				'script-src': ['self', 'unsafe-inline'],
+				'object-src': ['none']
 			},
 			reportOnly: {
 				'script-src': ['self'],
