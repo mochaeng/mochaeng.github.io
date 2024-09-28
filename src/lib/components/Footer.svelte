@@ -9,7 +9,12 @@
 <footer class="h-20 flex w-full mb-2 pb-4 mt-4">
 	<div class="flex mx-auto gap-5">
 		<div class="flex mx-auto gap-6">
-			<A href={github} target="_blank" className="p-2 h-14">
+			<A
+				href={github}
+				target="_blank"
+				className="p-2 h-14"
+				ariaLabel="Access my GitHub page to see my projects"
+			>
 				<svg
 					role="img"
 					viewBox="0 0 24 24"
@@ -22,7 +27,12 @@
 					></path>
 				</svg>
 			</A>
-			<A href={linkedin} target="_blank" className="p-2 h-14">
+			<A
+				href={linkedin}
+				target="_blank"
+				className="p-2 h-14"
+				ariaLabel="Access my Linkedin page to see more about me"
+			>
 				<svg
 					role="img"
 					viewBox="0 0 24 24"
@@ -35,7 +45,12 @@
 					></path>
 				</svg>
 			</A>
-			<A href={mail} target="_blank" className="p-2 h-14">
+			<A
+				href={mail}
+				target="_blank"
+				className="p-2 h-14"
+				ariaLabel="Send an e-mail to me if you want to talk more"
+			>
 				<svg
 					role="img"
 					viewBox="0 0 24 24"

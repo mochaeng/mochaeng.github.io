@@ -20,6 +20,14 @@ const config = {
 		}),
 		paths: {
 			base: process.argv.includes('dev') ? '' : ''
+		},
+		csp: {
+			directives: {
+				'script-src': ['self']
+			},
+			reportOnly: {
+				'script-src': ['self']
+			}
 		}
 	}
 };

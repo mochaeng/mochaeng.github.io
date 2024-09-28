@@ -44,6 +44,12 @@
 		isAriaExpanded = false;
 	}
 
+	function closeAriaExpanded() {
+		if (isAriaExpanded) {
+			isAriaExpanded = false;
+		}
+	}
+
 	function toggleTheme() {
 		isDark = !isDark;
 		localStorage.setItem('theme', isDark ? 'dark' : 'light');
@@ -91,7 +97,13 @@
 
 <header class="bg-header fixed h-20 border-b-2 border-border w-full p-2 z-[999]" bind:this={header}>
 	<div class="wrapper max-w-screen-xl h-full mx-auto flex items-center justify-between p-2 gap-2">
-		<div class="hamburguer-open z-10" aria-expanded={isAriaExpanded}>
+		<div
+			class="hamburguer-open z-10"
+			aria-expanded={isAriaExpanded}
+			role="button"
+			aria-label="Open menu"
+			aria-controls="menu"
+		>
 			<Button on:click={openHamburguer}>
 				<span class="sr-only">Open Menu</span>
 				<Menu size={32} />
@@ -113,10 +125,14 @@
 
 		<nav class="text-text flex-1" data-visible={isAriaExpanded}>
 			<ul class="z-50 bg-header" data-visible={isAriaExpanded}>
-				<li><a class="text-2xl" href="/">Home</a></li>
-				<li><a class="text-2xl" href="/blog">Blog</a></li>
-				<li><a class="text-2xl" href="/about">About</a></li>
-				<li><a class="text-2xl" href="/projects">Projects</a></li>
+				<li>
+					<a class="text-2xl" href="/" on:click={closeAriaExpanded}>Home</a>
+				</li>
+				<li><a class="text-2xl" href="/blog" on:click={closeAriaExpanded}>Blog</a></li>
+				<li><a class="text-2xl" href="/about" on:click={closeAriaExpanded}>About</a></li>
+				<li>
+					<a class="text-2xl" href="/projects" on:click={closeAriaExpanded}>Projects</a>
+				</li>
 			</ul>
 		</nav>
 

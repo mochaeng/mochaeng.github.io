@@ -66,6 +66,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Projects</title>
+</svelte:head>
+
 <main class="flex flex-col justify-start items-center text-text max-w-screen-xl pt-20 mt-4">
 	{#each projectTopics as topic}
 		<section

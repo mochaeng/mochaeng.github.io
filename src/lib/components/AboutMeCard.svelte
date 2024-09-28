@@ -61,7 +61,9 @@
 	</p>
 
 	<p>
-		I have familiarity with <span bind:this={webDev}>web-development</span> and I'm looking to
-		get my first opportunity. <span bind:this={hire}>Hire-me?</span>
+		I have familiarity with <span bind:this={webDev}>web-development</span> and I'm looking to get
+		my first opportunity.
 	</p>
+
+	<p><span bind:this={hire}>Hire-me?</span></p>
 </div>
