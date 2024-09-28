@@ -22,11 +22,13 @@ const config = {
 			base: process.argv.includes('dev') ? '' : ''
 		},
 		csp: {
+			mode: 'hash',
 			directives: {
 				'script-src': ['self']
 			},
 			reportOnly: {
-				'script-src': ['self']
+				'script-src': ['self'],
+				'report-to': ["'csp-endpoint'"]
 			}
 		}
 	}
