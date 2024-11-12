@@ -14,9 +14,9 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			precompress: true,
+			precompress: false,
 			strict: true,
-			fallback: '200.html'
+			fallback: '404.html'
 		}),
 		paths: {
 			base: process.argv.includes('dev') ? '' : ''

@@ -1,26 +1,7 @@
 <script>
-	import { onNavigate } from '$app/navigation';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import '../app.css';
-
-	(function () {
-		let redirect = sessionStorage.redirect;
-		delete sessionStorage.redirect;
-		if (redirect && redirect != location.href) {
-			history.replaceState(null, '', redirect);
-		}
-	})();
-
-	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
-			});
-		});
-	});
 </script>
 
 <main class="absolute inset-0 h-full w-full flex flex-col justify-between items-center gap-2">
