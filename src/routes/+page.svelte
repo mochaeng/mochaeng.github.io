@@ -22,16 +22,18 @@
 				Software Developer based in Brazil, linux enjoyer, docs reader, and terminals lover.
 			</p>
 			<div class="p-4 flex gap-6">
-				<A href="/projects" className="bg-buttons p-3 font-bold text-xl w-28 text-text"
-					>Projects</A
+				<A
+					href="/projects"
+					className="text-buttonIndex bg-buttonsIdx p-3 font-bold text-xl w-28"
 				>
-				<a
+					Projects
+				</A>
+				<A
 					href="/about"
-					class="bg-buttons p-3 font-bold text-text text-xl w-28 text-center rounded-base border-border border-2 shadow-brute hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all hover:shadow-none cursor-pointer"
-					data-astro-reload
+					className="bg-buttonsIdx text-buttonIndex p-3 font-bold text-xl w-28"
 				>
 					About
-				</a>
+				</A>
 			</div>
 		</div>
 	</div>
@@ -67,7 +69,7 @@
 				border-width: 2px;
 				border-color: hsl(var(--color-border));
 				border-radius: 5px;
-				box-shadow: 4px 4px 0px 0px hsl(var(--color-border));
+				box-shadow: 2px 2px 0px 0px hsl(var(--color-border));
 				background-color: hsl(var(--color-index));
 				.at {
 					font-size: 2.5rem;

@@ -1,28 +1,28 @@
 <script lang="ts">
 	import chaeyoung from '$lib/assets/chaeyoung.webp?enhanced';
 	import farmcode from '$lib/assets/projects/farm-code.webp?enhanced';
-	import flscheme from '$lib/assets/projects/farm-code.webp?enhanced';
+	import flscheme from '$lib/assets/projects/fl-scheme.webp?enhanced';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
 	const projectTopics = [
 		{
 			name: 'Machine Learning',
 			description:
-				'I have experience in machine learning and federated learning, with proficiency in libraries like  PyTorch, Pandas, Dask, and Flower.',
+				'I have experience in machine learning and federated learning. I can work with libraries like  PyTorch, Pandas, Dask, and Flower.',
 			cards: [
 				{
 					title: 'PhoenixFL',
 					badges: ['PyTorch', 'RabbitMQ', 'Pandas', 'Flower'],
 					description:
-						'A distributed system for intruder detection based on Federated Learning.',
+						'A distributed intrusion detection system leveraging Federated Learning to detect malicious network packets through Neural Nets.',
 					img: { src: chaeyoung, alt: 'Son chaeyoung from twice' },
 					links: [{ url: 'https://github.com/mochaeng/PhoenixFL', name: 'GitHub' }]
 				},
 				{
-					title: 'Federated Learning scheme',
-					badges: ['PyTorch', 'Web-Sockets'],
+					title: 'BarbaraFL',
+					badges: ['PyTorch', 'WebSockets'],
 					description:
-						'A privacy preserved Federated Learning scheme with PyTorch and Web-Sockets.',
+						'A Federated Learning simulation library for tabular data built on top of PyTorch and with native Python WebSockets.',
 					img: { src: flscheme, alt: 'Son chaeyoung from twice' },
 					links: [{ url: 'https://github.com/mochaeng/FL-System', name: 'GitHub' }]
 				}
@@ -33,12 +33,12 @@
 			description: 'I will add web dev projects.',
 			cards: [
 				{
-					title: 'Sapphire',
+					title: 'Emerald',
 					badges: ['Svelte', 'Drizzle', 'Supabase'],
 					description:
-						'A social media platform design to be a safe place in a modern web.',
+						'A full-stack social media platform design to be a safe place in a modern web.',
 					img: { src: chaeyoung, alt: 'Son chaeyoung from twice' },
-					links: [{ url: 'https://github.com/mochaeng/Sapphire', name: 'GitHub' }]
+					links: [{ url: 'https://github.com/mochaeng/Emerald', name: 'GitHub' }]
 				}
 			]
 		},

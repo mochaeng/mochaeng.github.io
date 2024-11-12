@@ -23,9 +23,9 @@
 
 <article class="max-w-[500px] wrapper flex flex-col border-2 border-border shadow-brute text-text">
 	<div class={twMerge('w-full h-[240px] flex items-center justify-center p-10', className)}>
-		<div class="w-[210px] h-[210px] shadow-brute border-2 border-border rounded-full">
+		<div class="w-[210px] h-[210px] shadow-brute border-2 border-border">
 			<enhanced:img
-				class="h-full w-full object-top object-cover rounded-full"
+				class="h-full w-full object-top object-cover"
 				src={card.img.src}
 				alt="Son Chaeyoung from the kpop grup TWICE"
 			/>
@@ -33,7 +33,7 @@
 	</div>
 
 	<div
-		class="bg-index p-2 h-full w-full flex flex-col justify-center items-center border-t-2 border-cardBorder"
+		class="bg-cardBg p-2 h-full w-full flex flex-col justify-center items-center border-t-2 border-cardBorder"
 	>
 		<p class="font-bold text-2xl">{card.title}</p>
 
@@ -52,8 +52,10 @@
 
 		<div class="p-2 flex gap-4 w-full">
 			{#each card.links as link}
-				<A className="p-2 flex-1 font-bold bg-buttons" href={link.url} target="_blank"
-					>{link.name}</A
+				<A
+					className="p-2 flex-1 font-bold bg-buttonsIdx text-buttonIndex"
+					href={link.url}
+					target="_blank">{link.name}</A
 				>
 			{/each}
 		</div>

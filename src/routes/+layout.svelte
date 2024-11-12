@@ -4,6 +4,14 @@
 	import Header from '$lib/components/Header.svelte';
 	import '../app.css';
 
+	(function () {
+		let redirect = sessionStorage.redirect;
+		delete sessionStorage.redirect;
+		if (redirect && redirect != location.href) {
+			history.replaceState(null, '', redirect);
+		}
+	})();
+
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
 		return new Promise((resolve) => {

@@ -1,4 +1,5 @@
 (function () {
+	console.log('I runned');
 	var redirect = sessionStorage.redirect;
 	delete sessionStorage.redirect;
 	if (redirect && redirect != location.href) {
