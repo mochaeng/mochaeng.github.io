@@ -2,7 +2,7 @@
 	import A from '$lib/components/ui/A.svelte';
 
 	import '@fontsource/acme';
-	import me from '$lib/assets/me.webp?enhanced';
+	import me from '$lib/assets/me.jpeg?enhanced';
 </script>
 
 <svelte:head>
