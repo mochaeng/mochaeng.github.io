@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { annotate, annotationGroup } from 'rough-notation';
 	import type { RoughAnnotationGroup, RoughAnnotation } from 'rough-notation/lib/model';
 	import { onMount } from 'svelte';
@@ -13,14 +15,14 @@
 	let group: RoughAnnotationGroup;
 	let annotations: RoughAnnotation[] = [];
 
-	$: {
+	run(() => {
 		// if (isDark) {
 		//   console.log(a1)
 		//   a1.color = 'blue'
 		// } else if(a1.isShowing()) {
 		//   a1.color = 'pink'
 		// }
-	}
+	});
 
 	function onTriggerAnnotation() {
 		const a1 = annotate(job, { type: 'highlight', color: '#159393' });

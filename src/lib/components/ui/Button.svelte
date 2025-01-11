@@ -1,20 +1,16 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
 
-	export let className = $$restProps.class;
+	let { class: className, children, ...rest }: HTMLButtonAttributes = $props();
 </script>
 
 <button
-	on:click
-	on:mouseover
-	on:mouseenter
-	on:mouseleave
-	on:focus
 	class={cn(
 		'bg-buttons rounded-base border-border text-text border-2 p-1 shadow-brute hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all hover:shadow-none',
 		className
 	)}
-	{...$$restProps}
+	{...rest}
 >
-	<slot />
+	{@render children?.()}
 </button>

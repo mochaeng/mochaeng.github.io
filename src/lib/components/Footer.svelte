@@ -12,8 +12,8 @@
 			<A
 				href={github}
 				target="_blank"
-				className="p-2 h-14"
-				ariaLabel="Access my GitHub page to see my projects"
+				class="p-2 h-14"
+				aria-label="Access my GitHub page to see my projects"
 			>
 				<svg
 					role="img"
@@ -30,8 +30,8 @@
 			<A
 				href={linkedin}
 				target="_blank"
-				className="p-2 h-14"
-				ariaLabel="Access my Linkedin page to see more about me"
+				class="p-2 h-14"
+				aria-label="Access my Linkedin page to see more about me"
 			>
 				<svg
 					role="img"
@@ -48,8 +48,8 @@
 			<A
 				href={mail}
 				target="_blank"
-				className="p-2 h-14"
-				ariaLabel="Send an e-mail to me if you want to talk more"
+				class="p-2 h-14"
+				aria-label="Send an e-mail to me if you want to talk more"
 			>
 				<svg
 					role="img"

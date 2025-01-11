@@ -1,12 +1,17 @@
-<script>
+<script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import '../app.css';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 </script>
 
 <main class="absolute inset-0 h-full w-full flex flex-col justify-between items-center gap-2">
 	<Header />
-	<slot />
+	{@render children?.()}
 	<Footer />
 </main>
 

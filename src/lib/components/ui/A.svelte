@@ -1,21 +1,16 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
+	import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-	export let className = $$restProps.class;
-	export let href = $$restProps.href;
-	export let target = $$restProps.target;
-	export let ariaLabel = $$restProps.ariaLabel;
+	let { class: className, children, ...rest }: HTMLAnchorAttributes = $props();
 </script>
 
 <a
-	{href}
-	{target}
-	aria-label={ariaLabel}
 	class={cn(
 		'bg-buttons text-center rounded-base border-border text-text border-2 shadow-brute hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all hover:shadow-none cursor-pointer',
 		className
 	)}
-	{...$$restProps}
+	{...rest}
 >
-	<slot />
+	{@render children?.()}
 </a>

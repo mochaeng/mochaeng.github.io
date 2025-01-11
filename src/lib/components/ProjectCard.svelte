@@ -3,22 +3,42 @@
 	import type { Picture } from 'vite-imagetools';
 	import A from '../components/ui/A.svelte';
 
-	type Props = {
-		img: {
-			src: Picture;
-			alt: string;
-		};
-		title: string;
-		badges: string[];
-		description: string;
-		links: {
-			url: string;
-			name: string;
-		}[];
-	};
+	// type Props = {
+	// 	card: {
+	// 		img: {
+	// 			src: Picture;
+	// 			alt: string;
+	// 		};
+	// 		title: string;
+	// 		badges: string[];
+	// 		description: string;
+	// 		links: {
+	// 			url: string;
+	// 			name: string;
+	// 		}[];
+	// 	};
+	// 	className: string;
+	// };
 
-	export let card: Props;
-	export let className: string;
+	let {
+		card,
+		className
+	}: {
+		card: {
+			img: {
+				src: Picture;
+				alt: string;
+			};
+			title: string;
+			badges: string[];
+			description: string;
+			links: {
+				url: string;
+				name: string;
+			}[];
+		};
+		className: string;
+	} = $props();
 </script>
 
 <article class="max-w-[500px] wrapper flex flex-col border-2 border-border shadow-brute text-text">
@@ -53,7 +73,7 @@
 		<div class="p-2 flex gap-4 w-full">
 			{#each card.links as link}
 				<A
-					className="p-2 flex-1 font-bold bg-buttonsIdx text-buttonIndex"
+					class="p-2 flex-1 font-bold bg-buttonsIdx text-buttonIndex"
 					href={link.url}
 					target="_blank">{link.name}</A
 				>

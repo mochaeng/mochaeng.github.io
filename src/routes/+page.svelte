@@ -24,14 +24,11 @@
 			<div class="p-4 flex gap-6">
 				<A
 					href="/projects"
-					className="text-buttonIndex bg-buttonsIdx p-3 font-bold text-xl w-28"
+					class="text-buttonIndex bg-buttonsIdx p-3 font-bold text-xl w-28"
 				>
 					Projects
 				</A>
-				<A
-					href="/about"
-					className="bg-buttonsIdx text-buttonIndex p-3 font-bold text-xl w-28"
-				>
+				<A href="/about" class="bg-buttonsIdx text-buttonIndex p-3 font-bold text-xl w-28">
 					About
 				</A>
 			</div>

@@ -6,12 +6,12 @@
 	import Button from '$lib/components/ui/Button.svelte';
 	import { browser } from '$app/environment';
 
-	let isAriaExpanded = false;
-	let isDark: boolean;
+	let isAriaExpanded = $state(false);
+	let isDark = $state(false);
 	let media: MediaQueryList;
 	let header: HTMLHeadElement;
 	let body: HTMLBodyElement;
-	let prevScrollpos = 0;
+	let prevScrollpos = $state(0);
 
 	onMount(() => {
 		isDark = document.documentElement.classList.contains('dark');
@@ -22,13 +22,13 @@
 		body = document.querySelector('body')!;
 	});
 
-	$: {
+	$effect(() => {
 		if (isAriaExpanded) {
 			disableBodyScroll(body);
 		} else {
 			enableBodyScroll(body);
 		}
-	}
+	});
 
 	function setupNavbar(event: MediaQueryListEvent) {
 		if (!event.matches) {
@@ -71,7 +71,7 @@
 </script>
 
 <svelte:window
-	on:scroll={() => {
+	onscroll={() => {
 		if (!header) {
 			return;
 		}
@@ -104,14 +104,14 @@
 			aria-label="Open menu"
 			aria-controls="menu"
 		>
-			<Button on:click={openHamburguer}>
+			<Button onclick={openHamburguer}>
 				<span class="sr-only">Open Menu</span>
 				<Menu size={32} />
 			</Button>
 		</div>
 
 		<div class="hamburguer-close z-10" aria-expanded={isAriaExpanded}>
-			<Button on:click={closeHamburguer}>
+			<Button onclick={closeHamburguer}>
 				<span class="sr-only">Close Menu</span>
 				<X size={32} />
 			</Button>
@@ -126,18 +126,18 @@
 		<nav class="text-text flex-1" data-visible={isAriaExpanded}>
 			<ul class="z-50 bg-header" data-visible={isAriaExpanded}>
 				<li>
-					<a class="text-2xl" href="/" on:click={closeAriaExpanded}>Home</a>
+					<a class="text-2xl" href="/" onclick={closeAriaExpanded}>Home</a>
 				</li>
-				<li><a class="text-2xl" href="/blog" on:click={closeAriaExpanded}>Blog</a></li>
-				<li><a class="text-2xl" href="/about" on:click={closeAriaExpanded}>About</a></li>
+				<li><a class="text-2xl" href="/blog" onclick={closeAriaExpanded}>Blog</a></li>
+				<li><a class="text-2xl" href="/about" onclick={closeAriaExpanded}>About</a></li>
 				<li>
-					<a class="text-2xl" href="/projects" on:click={closeAriaExpanded}>Projects</a>
+					<a class="text-2xl" href="/projects" onclick={closeAriaExpanded}>Projects</a>
 				</li>
 			</ul>
 		</nav>
 
 		<div class="theme-toggle z-10" data-visible={isAriaExpanded}>
-			<Button on:click={toggleTheme}>
+			<Button onclick={toggleTheme}>
 				<span class="sr-only">Toggle Theme</span>
 				{#if isDark}
 					<Moon size={32} />
