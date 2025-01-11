@@ -15,7 +15,7 @@
 			<h1 class="text-6xl text-center">
 				<span class="presentation text-text">
 					Hi, I'm Luiz Campos.
-					<span class="at text-5xl font-bold">(@mochaeng)</span>
+					<span class="at text-5xl font-bold">(@MochaEng)</span>
 				</span>
 			</h1>
 			<p class="text-3xl mt-8 text-text text-wrap text-center">
