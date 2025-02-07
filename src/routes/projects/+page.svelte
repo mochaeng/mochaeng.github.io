@@ -1,7 +1,8 @@
 <script lang="ts">
-	import chaeyoung from '$lib/assets/chaeyoung.webp?enhanced';
-	import farmcode from '$lib/assets/projects/farm-code.webp?enhanced';
-	import flscheme from '$lib/assets/projects/fl-scheme.webp?enhanced';
+	// import chaeyoung from '$lib/assets/chaeyoung.webp';
+	import farmcode from '$lib/assets/projects/farm-code.webp';
+	import flscheme from '$lib/assets/projects/fl-scheme.webp';
+	import phonixfl from '$lib/assets/projects/PhoenixDeploy.svg';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
 	const projectTopics = [
@@ -12,10 +13,11 @@
 			cards: [
 				{
 					title: 'PhoenixFL',
-					badges: ['PyTorch', 'RabbitMQ', 'Pandas', 'Flower'],
+					badges: ['PyTorch', 'Golang', 'RabbitMQ', 'ReactJS'],
 					description:
-						'A distributed intrusion detection system leveraging Federated Learning to detect malicious network packets through Neural Nets.',
-					img: { src: chaeyoung, alt: 'Son chaeyoung from twice' },
+						'An asynchronous solution for malicious traffic classification in heterogeneous IoT networks using federated learning"',
+					img: { src: phonixfl, alt: 'Son chaeyoung from twice' },
+					className: 'bg-white',
 					links: [{ url: 'https://github.com/mochaeng/PhoenixFL', name: 'GitHub' }]
 				},
 				{
@@ -24,24 +26,25 @@
 					description:
 						'A Federated Learning simulation library for tabular data built on top of PyTorch and with native Python WebSockets.',
 					img: { src: flscheme, alt: 'Son chaeyoung from twice' },
+					className: 'bg-white',
 					links: [{ url: 'https://github.com/mochaeng/FL-System', name: 'GitHub' }]
 				}
 			]
 		},
-		{
-			name: 'Web Dev',
-			description: 'I will add web dev projects.',
-			cards: [
-				{
-					title: 'Emerald',
-					badges: ['Svelte', 'Drizzle', 'Supabase'],
-					description:
-						'A full-stack social media platform design to be a safe place in a modern web.',
-					img: { src: chaeyoung, alt: 'Son chaeyoung from twice' },
-					links: [{ url: 'https://github.com/mochaeng/Emerald', name: 'GitHub' }]
-				}
-			]
-		},
+		// {
+		// 	name: 'Web Dev',
+		// 	description: 'I will add web dev projects.',
+		// 	cards: [
+		// 		{
+		// 			title: 'Emerald',
+		// 			badges: ['Svelte', 'Drizzle', 'Supabase'],
+		// 			description:
+		// 				'A full-stack social media platform design to be a safe place in a modern web.',
+		// 			img: { src: chaeyoung, alt: 'Son chaeyoung from twice' },
+		// 			links: [{ url: 'https://github.com/mochaeng/Emerald', name: 'GitHub' }]
+		// 		}
+		// 	]
+		// },
 		{
 			name: 'Game Dev',
 			description:
@@ -56,6 +59,7 @@
 						src: farmcode,
 						alt: 'Starting screen from the FarmCode game.'
 					},
+					className: 'dark:bg-white',
 					links: [
 						{ url: 'https://github.com/mochaeng/IHM', name: 'GitHub' },
 						{ url: 'https://mochaeng.itch.io/farmcode', name: 'Play' }

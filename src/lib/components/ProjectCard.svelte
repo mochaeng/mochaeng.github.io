@@ -1,24 +1,7 @@
 <script lang="ts">
-	import { twMerge } from 'tailwind-merge';
-	import type { Picture } from 'vite-imagetools';
+	// import type { Picture } from 'vite-imagetools';
 	import A from '../components/ui/A.svelte';
-
-	// type Props = {
-	// 	card: {
-	// 		img: {
-	// 			src: Picture;
-	// 			alt: string;
-	// 		};
-	// 		title: string;
-	// 		badges: string[];
-	// 		description: string;
-	// 		links: {
-	// 			url: string;
-	// 			name: string;
-	// 		}[];
-	// 	};
-	// 	className: string;
-	// };
+	import { cn } from '$lib/utils';
 
 	let {
 		card,
@@ -26,9 +9,10 @@
 	}: {
 		card: {
 			img: {
-				src: Picture;
+				src: string;
 				alt: string;
 			};
+			className: string;
 			title: string;
 			badges: string[];
 			description: string;
@@ -42,10 +26,15 @@
 </script>
 
 <article class="max-w-[500px] wrapper flex flex-col border-2 border-border shadow-brute text-text">
-	<div class={twMerge('w-full h-[240px] flex items-center justify-center p-10', className)}>
-		<div class="w-[210px] h-[210px] shadow-brute border-2 border-border">
-			<enhanced:img
-				class="h-full w-full object-top object-cover"
+	<div class={cn('w-full h-[240px] flex items-center justify-center p-10', className)}>
+		<div
+			class={cn(
+				'w-[210px] h-[210px] rounded-full shadow-brute border-2 border-border bg-gray-100',
+				card.className
+			)}
+		>
+			<img
+				class="h-full w-full rounded-full object-center object-contain"
 				src={card.img.src}
 				alt="Son Chaeyoung from the kpop grup TWICE"
 			/>
@@ -75,8 +64,9 @@
 				<A
 					class="p-2 flex-1 font-bold bg-buttonsIdx text-buttonIndex"
 					href={link.url}
-					target="_blank">{link.name}</A
-				>
+					target="_blank"
+					>{link.name}
+				</A>
 			{/each}
 		</div>
 	</div>
