@@ -7,7 +7,7 @@
 
 <a
 	class={cn(
-		'bg-buttons text-center rounded-base border-border text-text border-2 shadow-brute hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all hover:shadow-none cursor-pointer',
+		'cursor-pointer rounded-base border-2 border-border bg-buttons text-center text-text shadow-brute transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none',
 		className
 	)}
 	{...rest}

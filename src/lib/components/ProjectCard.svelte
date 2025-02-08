@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import type { Picture } from 'vite-imagetools';
 	import A from '../components/ui/A.svelte';
 	import { cn } from '$lib/utils';
 
@@ -34,7 +33,7 @@
 			)}
 		>
 			<img
-				class="h-full w-full rounded-full object-center object-contain"
+				class="rounded-full h-full w-full object-center object-contain"
 				src={card.img.src}
 				alt="Son Chaeyoung from the kpop grup TWICE"
 			/>

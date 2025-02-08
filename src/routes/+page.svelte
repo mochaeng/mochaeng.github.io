@@ -11,10 +11,11 @@
 
 <main class="flex-1 text-text text-balance max-w-screen-xl pt-4">
 	<div class="first">
-		<div class="presentation info flex flex-col items-center p-4 text-text">
+		<div class="info flex flex-col items-center p-4 text-text">
 			<h1 class="text-6xl text-center">
 				<span class="presentation text-text">
 					Hi, I'm Luiz Campos.
+					<br />
 					<span class="at text-5xl font-bold">(@MochaEng)</span>
 				</span>
 			</h1>
@@ -66,7 +67,7 @@
 				border-width: 2px;
 				border-color: hsl(var(--color-border));
 				border-radius: 5px;
-				box-shadow: 2px 2px 0px 0px hsl(var(--color-border));
+				box-shadow: 4px 4px 0px 0px hsl(var(--color-border));
 				background-color: hsl(var(--color-index));
 				.at {
 					font-size: 2.5rem;

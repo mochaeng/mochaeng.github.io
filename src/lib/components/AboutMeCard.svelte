@@ -1,36 +1,26 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { annotate, annotationGroup } from 'rough-notation';
 	import type { RoughAnnotationGroup, RoughAnnotation } from 'rough-notation/lib/model';
 	import { onMount } from 'svelte';
 
-	// let isDark: boolean = document.documentElement.classList.contains('dark');
 	let job: HTMLSpanElement;
 	let place: HTMLSpanElement;
 	let webDev: HTMLSpanElement;
 	let linux: HTMLSpanElement;
 	let hire: HTMLElement;
+	let first: HTMLElement;
 
 	let group: RoughAnnotationGroup;
 	let annotations: RoughAnnotation[] = [];
 
-	run(() => {
-		// if (isDark) {
-		//   console.log(a1)
-		//   a1.color = 'blue'
-		// } else if(a1.isShowing()) {
-		//   a1.color = 'pink'
-		// }
-	});
-
 	function onTriggerAnnotation() {
-		const a1 = annotate(job, { type: 'highlight', color: '#159393' });
+		const a1 = annotate(job, { type: 'box' });
 		const a2 = annotate(place, { type: 'underline' });
-		const a3 = annotate(webDev, { type: 'underline' });
-		const a4 = annotate(linux, { type: 'underline' });
-		const a5 = annotate(hire, { type: 'circle' });
-		annotations = [a1, a2, a3, a4, a5];
+		const a3 = annotate(linux, { type: 'underline' });
+		const a4 = annotate(webDev, { type: 'underline' });
+		const a5 = annotate(first, { type: 'underline' });
+		const a6 = annotate(hire, { type: 'circle', padding: 10 });
+		annotations = [a1, a2, a3, a4, a5, a6];
 		group = annotationGroup(annotations);
 		group.show();
 		return group;
@@ -47,24 +37,25 @@
 	});
 </script>
 
-<div
-	class="text-[1.125rem] leading-[1.6] w-full text-wrap text-justify flex flex-col gap-4 max-w-prose"
->
+<div class="flex w-full flex-col gap-4 text-wrap text-justify text-[1.25rem] leading-[1.5]">
 	<p>
-		Hello, I'm luiz campos, a software <span bind:this={job}>developer</span>
+		Hello, I'm Luiz Campos, a software <span bind:this={job}>developer</span>
 		based in <span bind:this={place}>Brazil</span>.
 	</p>
 
 	<p>
-		I'm currently in my last semester as an undergrad, researching/working on my final project
-		on the topic of federated learning and distributed systems. I'm also a huge <span
-			bind:this={linux}>linux</span
-		> geek - I'm not afraid of terminals or digging through obscure documentation.
+		I'm currently in my last semester as an undergrad, researching and working on my final
+		project on the topic of federated learning. I'm also a huge <span bind:this={linux}
+			>linux</span
+		> geek &mdash; I'm not afraid of terminals or digging through obscure documentation.
 	</p>
 
 	<p>
-		I have familiarity with <span bind:this={webDev}>web-development</span> and I'm looking to get
-		my first opportunity.
+		I'm curious and want to learn from experienced people. I have familiarity with <span
+			bind:this={webDev}>web-dev</span
+		>
+		and an interest in networks and distributed systems. I'm looking for my
+		<span bind:this={first}>first</span> opportunity so I can gain real experience and grow.
 	</p>
 
 	<p><span bind:this={hire}>Hire-me?</span></p>

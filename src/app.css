@@ -11,7 +11,7 @@
 }
 
 * {
-	font-family: 'DM Sans Variable', sans-serif;
+	/* font-family: 'Inter Variable', sans-serif; */
 	transition:
 		background-color 0.2s ease,
 		color 0.2s ease;
@@ -38,7 +38,7 @@
 		--color-main: 220, 22%, 92%;
 		--main-accent: 27 98% 50%;
 		--color-border: 234, 16%, 35%;
-		--shadow: 2px 2px 0px 0px hsl(var(--color-border));
+		--shadow: 4px 4px 0px 0px hsl(var(--color-border));
 
 		--color-background: 220, 23%, 95%;
 		--color-text: 234, 16%, 35%;
@@ -52,7 +52,7 @@
 
 		--card-1: 220, 21%, 89%;
 		--card-bg: 220, 22%, 92%;
-		/* --post-bg: var(--header-bg); */
+		--post-bg: var(--header-bg);
 		--blog-bg: var(--color-background);
 		--text-blog: var(--color-text);
 
@@ -73,7 +73,7 @@
 		--color-index: var(--color-main);
 
 		--header-bg: var(--color-main);
-		--buttons-bg: 240, 21%, 10%;
+		--buttons-bg: 240, 21%, 12%;
 		--buttons-index: 232, 97%, 85%;
 		--text-button-index: var(--color-background);
 		--scroll-bg: 100 100% 100%;

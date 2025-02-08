@@ -1,4 +1,6 @@
 <script lang="ts">
+	import '@fontsource-variable/inter';
+
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import '../app.css';
@@ -17,9 +19,11 @@
 
 <style>
 	:global(body) {
+		font-family: 'Inter Variable', sans-serif;
 		height: 100dvh;
 		background-color: hsl(var(--color-background));
 		overflow: auto;
+		/* font-size: clamp(15px, 4vw, 2rem); */
 	}
 
 	@keyframes fade-in {
