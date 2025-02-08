@@ -52,7 +52,7 @@
 </svelte:head>
 
 {#snippet stack(name: string, technologies: technology[])}
-	<p class="pb-6 text-3xl font-bold">{name}</p>
+	<p class="py-6 text-3xl font-bold">{name}</p>
 	<TechStack {technologies} color="#dc8a78" />
 {/snippet}
 
@@ -62,7 +62,8 @@
 		<AboutMeCard />
 
 		<p class="mt-6 py-6 text-5xl font-bold text-[#7287fd] dark:text-[#89b4fa]">Technologies</p>
-		{@render stack('Languages', languages)}
+		<p class="pb-6 text-3xl font-bold">Languages</p>
+		<TechStack technologies={languages} color="#dc8a78" />
 		{@render stack('Frontend', frontend)}
 		{@render stack('Backend', backend)}
 		{@render stack('ML', ml)}
