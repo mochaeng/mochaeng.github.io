@@ -6,17 +6,27 @@ categories: [svelte, svelteki]
 published: true
 ---
 
-## First Post
+<script>
+  import LazyImg from '../lib/components/ui/LazyImg.svelte'
+</script>
 
-For the initial release of the website, we created a component to be used throughout the codebase. This worked as expected, giving us control of the styling based on the props passed in or omitted.
+## Torchbidings
 
-```ts
-function greet() {
-	console.log('wtf');
-}
+We need to load a PyTorch model and make predictions, but since we are using Go, there's no native library to direclty run PyTorch models like in Python. To solve this, we can load the model in c++ using LibTorch (PyTorch's C++ API) and call the necessary functions from Go using _cmd/cgo_.
+
+```go
+// #cgo LDFLAGS: -L./build -lclassifier -ltorch -ltorch_cpu -ltorch_cuda -lcudart -lc10
+// #cgo CXXFLAGS: -std=c++17
+// #cgo CFLAGS: -D_GLIBCXX_USE_CXX11_ABI=1
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include "classifier.h"
+import 'C'
 ```
 
-Of course, this meant the external link icon couldn’t be disabled in blog posts but that was a trade-off we were okay with.
+<LazyImg src="/favicon.png" alt="Svelte" />
+
+<!-- Of course, this meant the external link icon couldn’t be disabled in blog posts but that was a trade-off we were okay with.
 
 ## Second one
 
@@ -35,4 +45,4 @@ At this point, we were suitably fed up of the extra complexity we were bringing 
 
 ## Test
 
-another one
+another one -->

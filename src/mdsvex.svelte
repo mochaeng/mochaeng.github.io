@@ -1,5 +1,9 @@
+<script lang="ts" module>
+	import LazyImg from '$lib/components/ui/LazyImg.svelte';
+	export { LazyImg };
+</script>
+
 <script lang="ts">
-	import img from '$lib/components/ui/img.svelte';
 	let props = $props();
 </script>
 

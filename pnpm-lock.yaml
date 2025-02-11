@@ -17,6 +17,9 @@ importers:
       '@fontsource/pacifico':
         specifier: ^5.1.1
         version: 5.1.1
+      blog:
+        specifier: 'link:'
+        version: 'link:'
       body-scroll-lock:
         specifier: 4.0.0-beta.0
         version: 4.0.0-beta.0
