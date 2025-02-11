@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+	darkMode: 'media',
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
@@ -40,9 +41,56 @@ export default {
 			fontWeight: {
 				base: '500',
 				heading: '700'
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '69 ch',
+						h1: {
+							fontSize: 'clamp(28px, 6vw, 250%)',
+							fontWeight: '900'
+						},
+						h2: {
+							color: '#4c4f69',
+							fontSize: 'clamp(24px, 5vw, 200%)',
+							marginBlock: '1.5em .5em',
+							paddingBlock: '.5em 0',
+							lineHeight: '1.2',
+							fontWeight: '600',
+							marginInlineStart: '0'
+						},
+						p: {
+							fontSize: 'clamp(15px, 4vw, 1.25rem)',
+							lineHeight: '1.5',
+							margin: '1.25rem 0',
+							hyphens: 'auto',
+							wordWrap: 'break-word'
+						},
+						ol: {
+							fontSize: 'clamp(15px, 4vw, 1.25rem)',
+							lineHeight: '1.5 rem'
+						},
+						li: {
+							margin: 0
+						},
+						pre: {
+							backgroundColor: '#e6e9ef !important'
+						}
+					}
+				},
+				dark: {
+					css: {
+						h2: {
+							color: '#cdd6f4'
+						},
+						pre: {
+							backgroundColor: '#181825 !important'
+						}
+					}
+				}
 			}
 		}
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 	darkMode: 'selector'
 };
