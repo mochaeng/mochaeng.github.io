@@ -13,6 +13,23 @@
 	}
 }
 
+body {
+	font-size: clamp(15px, 4vw, 1.25rem);
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: clamp(28px, 6vw, 250%);
+}
+
+h2 {
+	fontsize: clamp(24px, 5vw, 200%);
+}
+
+h3 {
+	font-size: clamp(22px, 4.25vw, 125%);
+}
+
 html.dark .shiki,
 html.dark .shiki span {
 	color: var(--shiki-dark) !important;
@@ -26,8 +43,8 @@ html.dark .shiki span {
 * {
 	/* font-family: 'Inter Variable', sans-serif; */
 	transition:
-		background-color 0.2s ease,
-		color 0.2s ease;
+		background-color 0.1s ease,
+		color 0.1s ease;
 }
 
 ::-webkit-scrollbar {
@@ -60,7 +77,8 @@ html.dark .shiki span {
 		--header-bg: var(--color-main);
 		--buttons-bg: var(--color-main);
 		--buttons-index: 231, 97%, 72%;
-		--text-button-index: var(--color-background);
+		/* --text-button-index: var(--color-background); */
+		--text-button-index: 100, 100%, 100%;
 		--scroll-bg: 0, 0%, 11%;
 
 		--card-1: 220, 21%, 89%;

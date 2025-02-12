@@ -37,7 +37,7 @@
 	});
 </script>
 
-<div class="flex w-full flex-col gap-4 text-wrap text-justify text-[1.25rem] leading-[1.5]">
+<div class="flex w-full flex-col gap-4 text-wrap text-justify">
 	<p>
 		Hello, I'm Luiz Campos, a software <span bind:this={job}>developer</span>
 		based in <span bind:this={place}>Brazil</span>.

@@ -13,7 +13,7 @@ const mdsvexOptions = {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await createHighlighter({
 				themes: ['catppuccin-mocha', 'catppuccin-latte'],
-				langs: ['javascript', 'typescript', 'go', 'rust', 'ocaml']
+				langs: ['javascript', 'typescript', 'go', 'rust', 'ocaml', 'sh', 'python', 'c++']
 			});
 			await highlighter.loadLanguage('javascript', 'typescript');
 			const html = escapeSvelte(
@@ -25,8 +25,7 @@ const mdsvexOptions = {
 			return `{@html \`${html}\` }`;
 		}
 	}
-	// remarkPlugins: [[remarkToc, { tight: true }]],
-	// rehypePlugins: [rehypeSlug]
+	// remarkPlugins: [remarkGfm]
 };
 
 /** @type {import('@sveltejs/kit').Config} */

@@ -3,6 +3,7 @@
 	import farmcode from '$lib/assets/projects/farm-code.webp';
 	import flscheme from '$lib/assets/projects/fl-scheme.webp';
 	import phonixfl from '$lib/assets/projects/PhoenixDeploy.svg';
+
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
 	const projectTopics = [
@@ -74,14 +75,14 @@
 	<title>Projects</title>
 </svelte:head>
 
-<main class="flex flex-col justify-start items-center text-text max-w-screen-xl pt-20 mt-4">
+<main class="mt-4 flex max-w-screen-xl flex-col items-center justify-start pt-20 text-text">
 	{#each projectTopics as topic}
 		<section
-			class="mt-2 flex flex-col items-center justify-center p-4 gap-4 w-full text-center"
+			class="mt-2 flex w-full flex-col items-center justify-center gap-4 p-4 text-center"
 		>
 			<h1 class="text-6xl">{topic.name}</h1>
-			<p class="text-xl max-w-prose">{topic.description}</p>
-			<div class="mt-4 flex justify-center gap-4 flex-wrap">
+			<p class="max-w-prose text-xl">{topic.description}</p>
+			<div class="mt-4 flex flex-wrap justify-center gap-4">
 				{#each topic.cards as card}
 					<ProjectCard {card} className="text-black bg-card_1" />
 				{/each}

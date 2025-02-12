@@ -56,7 +56,7 @@
 	<TechStack {technologies} color="#dc8a78" />
 {/snippet}
 
-<main class="mb-10 mt-8 flex w-full max-w-screen-xl justify-center px-4 pt-4 text-text">
+<main class="mb-10 mt-8 flex w-full max-w-screen-xl justify-center px-5 pt-4 text-text">
 	<section class="about mt-10 flex flex-col gap-2">
 		<h1 class="py-6 text-5xl font-bold text-[#7287fd] dark:text-[#89b4fa]">About me</h1>
 		<AboutMeCard />

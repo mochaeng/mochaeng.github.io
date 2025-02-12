@@ -7,4 +7,5 @@ export type Post = {
 	date: string;
 	categories: Categories[];
 	published: boolean;
+	background: string;
 };

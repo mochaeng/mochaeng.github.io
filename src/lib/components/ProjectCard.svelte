@@ -24,16 +24,16 @@
 	} = $props();
 </script>
 
-<article class="max-w-[500px] wrapper flex flex-col border-2 border-border shadow-brute text-text">
-	<div class={cn('w-full h-[240px] flex items-center justify-center p-10', className)}>
+<article class="wrapper flex max-w-[500px] flex-col border-2 border-border text-text shadow-brute">
+	<div class={cn('flex h-[240px] w-full items-center justify-center p-10', className)}>
 		<div
 			class={cn(
-				'w-[210px] h-[210px] rounded-full shadow-brute border-2 border-border bg-gray-100',
+				'h-[210px] w-[210px] rounded-full border-2 border-border bg-gray-100 shadow-brute',
 				card.className
 			)}
 		>
 			<img
-				class="rounded-full h-full w-full object-center object-contain"
+				class="h-full w-full rounded-full object-contain object-center"
 				src={card.img.src}
 				alt="Son Chaeyoung from the kpop grup TWICE"
 			/>
@@ -41,27 +41,27 @@
 	</div>
 
 	<div
-		class="bg-cardBg p-2 h-full w-full flex flex-col justify-center items-center border-t-2 border-cardBorder"
+		class="flex h-full w-full flex-col items-center justify-center border-t-2 border-cardBorder bg-cardBg p-2"
 	>
-		<p class="font-bold text-2xl">{card.title}</p>
+		<p class="text-2xl font-bold">{card.title}</p>
 
-		<div class="flex justify-center items-center text-wrap flex-wrap gap-1">
+		<div class="flex flex-wrap items-center justify-center gap-1 text-wrap">
 			{#each card.badges as badge, idx}
-				<p class="text-lg">
+				<p class="text-fluid-sm">
 					{badge}
 				</p>
 				{#if idx < card.badges.length - 1}
-					<p class="text-4xl">&#183;</p>
+					<p class="">&#183;</p>
 				{/if}
 			{/each}
 		</div>
 
-		<p class="text-xl flex-1">{card.description}</p>
+		<p class="flex-1">{card.description}</p>
 
-		<div class="p-2 flex gap-4 w-full">
+		<div class="flex w-full gap-4 p-2">
 			{#each card.links as link}
 				<A
-					class="p-2 flex-1 font-bold bg-buttonsIdx text-buttonIndex"
+					class="flex-1 bg-buttonsIdx p-2 font-bold text-buttonIndex"
 					href={link.url}
 					target="_blank"
 					>{link.name}

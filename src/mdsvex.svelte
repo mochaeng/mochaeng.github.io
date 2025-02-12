@@ -1,6 +1,8 @@
 <script lang="ts" module>
 	import LazyImg from '$lib/components/ui/LazyImg.svelte';
-	export { LazyImg };
+	import { a, code } from '$lib/components/ui';
+
+	export { a, code };
 </script>
 
 <script lang="ts">

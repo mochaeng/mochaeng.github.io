@@ -4,6 +4,10 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
+			fontSize: {
+				'fluid-sm': 'clamp(15px, 4vw, 1.15rem)',
+				'fluid-md': 'clamp(15px, 4vw, 1.25rem)'
+			},
 			colors: {
 				background: 'hsl(var(--color-background))',
 				main: 'hsl(var(--color-main))',
@@ -67,14 +71,36 @@ export default {
 							wordWrap: 'break-word'
 						},
 						ol: {
-							fontSize: 'clamp(15px, 4vw, 1.25rem)',
+							// fontSize: 'clamp(15px, 4vw, 1.25rem)',
 							lineHeight: '1.5 rem'
 						},
 						li: {
-							margin: 0
+							margin: 0,
+							fontSize: 'clamp(15px, 4vw, 1.25rem)'
 						},
 						pre: {
 							backgroundColor: '#e6e9ef !important'
+						},
+						img: {
+							borderRadius: '0.375rem',
+							objectFit: 'cover',
+							aspectRatio: '21/9'
+						},
+						a: {
+							fontSize: 'clamp(15px, 4vw, 1.25rem)',
+							color: '#7287fd',
+							target: '_blank',
+							rel: 'noopener noreferrer'
+						},
+						code: {
+							backgroundColor: '#dce0e8',
+							borderRadius: '0.2rem',
+							padding: '0.1rem',
+							color: '#7287fd'
+						},
+						strong: {
+							color: '#5c5f77',
+							fontWeight: '800'
 						}
 					}
 				},
@@ -85,6 +111,17 @@ export default {
 						},
 						pre: {
 							backgroundColor: '#181825 !important'
+						},
+						a: {
+							color: '#b4befe'
+						},
+						code: {
+							backgroundColor: '#181825',
+							color: '#b4befe'
+						},
+						strong: {
+							color: '#bac2de',
+							fontWeight: '800'
 						}
 					}
 				}
