@@ -52,6 +52,7 @@ export default {
 						maxWidth: '69 ch',
 						h1: {
 							fontSize: 'clamp(28px, 6vw, 250%)',
+							lineHeight: '1.2',
 							fontWeight: '900'
 						},
 						h2: {

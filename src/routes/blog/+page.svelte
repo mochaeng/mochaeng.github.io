@@ -16,7 +16,7 @@
 <main class="mb-10 mt-20 w-full max-w-screen-xl px-4 pt-4 text-text dark:text-[#a6adc8]">
 	<hgroup>
 		<h1 class="py-3 font-black text-[#7287fd] dark:text-[#89b4fa]">Blog</h1>
-		<p>Just me, figuring things out and sharing what I learn along the way.</p>
+		<p>Just me, exploring, experimenting, and sharing what I learn along the way.</p>
 	</hgroup>
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">

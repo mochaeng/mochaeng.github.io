@@ -1,11 +1,11 @@
 ---
-title: First Post
+title: PyTorch Inference in Go with CUDA Support
 description: PyTorch Model inference with Golang
 date: '2025-02-08'
 editDate: ''
-categories: [golang, cuda]
+categories: [golang, cuda, pytorch]
 published: true
-background: 'blog1.avif'
+background: 'blog3.avif'
 ---
 
 <script>
@@ -30,7 +30,7 @@ After some research, I found an [excellent article](https://omkar.xyz/golibtorch
 
 ## CMake and C++ Files
 
-First of all we need to create a CMake file. I'm going to use the one already provided on PyTorch's website. On the root directory create a `CMakeLists.txt`:
+First, we need to create a CMake file. I'll use the one provided on PyTorch's website. In the root directory, create a `CMakeLists.txt` file:
 
 ```sh
 # CMakeLists.txt
@@ -47,7 +47,7 @@ target_link_libraries(federated-classifier "${TORCH_LIBRARIES}")
 set_property(TARGET federated-classifier PROPERTY CXX_STANDARD 17)
 ```
 
-Next, we need the C++ code to use LibTorch to make a inferece. In the case of my code, it's just a binary classification. First create a `classifier.hpp`:
+Next, we need C++ code to use LibTorch for inference. In my case, it's a simple binary classification. First, create a `classifier.hpp` file:
 
 ```cpp
 // classifier.hpp
@@ -73,7 +73,7 @@ void DeleteModel(mModel model);
 #endif
 ```
 
-Next create a `classifier.cpp` that contains a Model class that's going to load the PyTorch model and also have a function to do a binary classification:
+Next, create a `classifier.cpp` file containing a Model class that loads the PyTorch model and includes a function for binary classification:
 
 ```cpp
 // classifier.cpp
@@ -141,7 +141,7 @@ void DeleteModel(mModel model) {
 
 ## Golang file
 
-The Go code interacts with the shared object (`libclassifier.so`) using `cGo`, which allows Go programs to call C/C++ functions directly. If you check the `classifier.go` file, you’ll notice that we are passing the `-L./build` flag to specify the directory where `libclassifier.so` is located, and linking it using `-lclassifier`:
+The Go code interacts with the shared object (`libclassifier.so`) using `cgo`, allowing Go to call C/C++ functions directly. In `classifier.go`, the `-L./build` flag specifies the directory of `libclassifier.so`, and `-lclassifier` links it.
 
 ```go
 // classifier.go
@@ -221,7 +221,7 @@ func (m *Classifier) Delete() {
 
 ## Running the code
 
-To use the code you just need to create the classifier structure and use you desired _torchscript_ model. However, to run the go code, you also need to make the following env variables available:
+To use the code, create the classifier structure and provide the desired _TorchScript_ model. However, to run the go code, the following environment variables must be set:
 
 ```sh
 export LIBRARY_PATH="/usr/local/libtorch/lib:/usr/local/cuda-12.4/lib64:${LIBRARY_PATH}" && \
@@ -235,4 +235,4 @@ go run cmd/*.go; \  # some go code you have
 
 ## Use case
 
-If you want to see my full code in actions, you can find it [here](https://github.com/mochaeng/PhoenixFL/tree/main/prototype_2/simulation/internal/torchbidings)
+If you want to see my full code in action, you can find it [here](https://github.com/mochaeng/PhoenixFL/tree/main/prototype_2/simulation/internal/torchbidings).
