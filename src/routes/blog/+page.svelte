@@ -28,7 +28,7 @@
 					<a href={`blog/${post.slug}`} class="group">
 						<li>
 							<LazyImg
-								class="aspect-[16/5] h-[50%] object-cover"
+								class="aspect-[16/5] h-[50%] w-full object-cover"
 								path={post.background}
 							/>
 							<div class="flex flex-col gap-4 px-4 py-2">

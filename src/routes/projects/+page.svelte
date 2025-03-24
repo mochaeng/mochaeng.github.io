@@ -3,6 +3,8 @@
 	import farmcode from '$lib/assets/projects/farm-code.webp';
 	import flscheme from '$lib/assets/projects/fl-scheme.webp';
 	import phonixfl from '$lib/assets/projects/PhoenixDeploy.svg';
+	import sapphireBackend from '$lib/assets/projects/sapphirebackend.png';
+	import sapphireFrontend from '$lib/assets/projects/sapphirefrontend.png';
 
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
@@ -14,9 +16,9 @@
 			cards: [
 				{
 					title: 'PhoenixFL',
-					badges: ['PyTorch', 'Golang', 'RabbitMQ', 'ReactJS'],
+					badges: ['PyTorch', 'Go', 'RabbitMQ', 'React'],
 					description:
-						'An asynchronous solution for malicious traffic classification in heterogeneous IoT networks using federated learning"',
+						'An asynchronous solution for malicious traffic classification in heterogeneous IoT networks using federated learning',
 					img: { src: phonixfl, alt: 'Son chaeyoung from twice' },
 					className: 'bg-white',
 					links: [{ url: 'https://github.com/mochaeng/PhoenixFL', name: 'GitHub' }]
@@ -32,20 +34,34 @@
 				}
 			]
 		},
-		// {
-		// 	name: 'Web Dev',
-		// 	description: 'I will add web dev projects.',
-		// 	cards: [
-		// 		{
-		// 			title: 'Emerald',
-		// 			badges: ['Svelte', 'Drizzle', 'Supabase'],
-		// 			description:
-		// 				'A full-stack social media platform design to be a safe place in a modern web.',
-		// 			img: { src: chaeyoung, alt: 'Son chaeyoung from twice' },
-		// 			links: [{ url: 'https://github.com/mochaeng/Emerald', name: 'GitHub' }]
-		// 		}
-		// 	]
-		// },
+		{
+			name: 'Web Development',
+			description:
+				'I have a background in web-dev, including backends with Go (clean architecture) and responsive frontends with React. I also use PostgreSQL, Redis, Docker, and can self-host applications on my VPS.',
+			cards: [
+				{
+					title: 'Sapphire Frontend',
+					badges: ['React', 'Tailwind CSS'],
+					description:
+						'A responsive social media frontend for desktop, tablet, and mobile.',
+					img: { src: sapphireFrontend, alt: 'Son chaeyoung from twice' },
+					className: 'bg-white',
+					links: [
+						{ url: 'https://github.com/mochaeng/sapphire-frontend', name: 'Live Demo' },
+						{ url: 'https://github.com/mochaeng/sapphire-frontend', name: 'GitHub' }
+					]
+				},
+				{
+					title: 'Sapphire Backend',
+					badges: ['Go', 'Postgres', 'Docker', 'Redis'],
+					description:
+						'A Go backend with REST API, database, and authentication for a social media platform.',
+					img: { src: sapphireBackend, alt: 'Son chaeyoung from twice' },
+					className: 'bg-white',
+					links: [{ url: 'https://github.com/mochaeng/sapphire-backend', name: 'GitHub' }]
+				}
+			]
+		},
 		{
 			name: 'Game Dev',
 			description:
@@ -62,8 +78,8 @@
 					},
 					className: 'dark:bg-white',
 					links: [
-						{ url: 'https://github.com/mochaeng/IHM', name: 'GitHub' },
-						{ url: 'https://mochaeng.itch.io/farmcode', name: 'Play' }
+						{ url: 'https://mochaeng.itch.io/farmcode', name: 'Play' },
+						{ url: 'https://github.com/mochaeng/IHM', name: 'GitHub' }
 					]
 				}
 			]
@@ -75,7 +91,7 @@
 	<title>Projects</title>
 </svelte:head>
 
-<main class="mt-4 flex max-w-screen-xl flex-col items-center justify-start pt-20 text-text">
+<main class="mt-4 flex max-w-screen-xl flex-col items-center justify-start gap-4 pt-20 text-text">
 	{#each projectTopics as topic}
 		<section
 			class="mt-2 flex w-full flex-col items-center justify-center gap-4 p-4 text-center"

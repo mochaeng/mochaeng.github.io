@@ -45,9 +45,8 @@
 
 	<p>
 		I'm currently in my last semester as an undergrad, researching and working on my final
-		project on the topic of federated learning. I'm also a huge <span bind:this={linux}
-			>linux</span
-		> geek &mdash; I'm not afraid of terminals or digging through obscure documentation.
+		project on the topic of federated learning. I'm also a <span bind:this={linux}>linux</span> geek
+		&mdash; I'm not afraid of terminals or digging through obscure documentation.
 	</p>
 
 	<p>

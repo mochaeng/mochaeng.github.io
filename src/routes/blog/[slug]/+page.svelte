@@ -12,7 +12,10 @@
 </svelte:head>
 
 <div class="mt-20 w-full max-w-screen-xl px-4">
-	<LazyImg class="mt-8 aspect-[16/5] rounded-3xl object-cover" path={data.meta.background} />
+	<LazyImg
+		class="mt-8 aspect-[16/5] w-full rounded-3xl object-cover"
+		path={data.meta.background}
+	/>
 	<article class="mx-auto mt-10 w-full max-w-[69ch] text-text">
 		<div class="mb-5 mt-5 flex flex-col gap-2">
 			<hgroup class="flex flex-col gap-2">

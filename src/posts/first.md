@@ -14,7 +14,7 @@ background: 'blog3.avif'
 
 <!-- <LazyImg class="rounded-lg" path={background} alt="" /> -->
 
-A couple of months ago, I was working on my graduation project, [PhoenixFL](https://github.com/mochaeng/PhoenixFL). I was building an asynchronous solution with RabbitMQ to detect malicious network packets using neural networks. Initially, the consumers were written in Python, but I soon hit a performance ceiling. I decided to move the code to Golang, only to discover that there were no official PyTorch bindings for Go.
+A couple of months ago, I was working on my graduation project, [PhoenixFL](https://github.com/mochaeng/PhoenixFL). I was building an asynchronous solution with RabbitMQ to process and classify a bunch of network packets using neural networks. Initially, the consumers were written in Python, but I soon hit a performance ceiling. I decided to move the code to Golang, only to discover that there were no official PyTorch bindings for Go.
 
 After some research, I found an [excellent article](https://omkar.xyz/golibtorch/) by Omkar Prabhu that showed how to create C++ bindings for inference using LibTorch and access them from Golang via cgo. Although the solution was great, I couldn't get CUDA to work with it. However, a [post on StackOverflow](https://stackoverflow.com/questions/32589153/how-to-compile-cuda-source-with-go-languages-cgo#answer-33985201) talked about how to compile CUDA source code with Go. The solution involved building a share object, configuring the CUDA compiler, and liking the `-lcudart` flags in cgo.
 
