@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '@fontsource-variable/inter';
+	import { navigating } from '$app/state';
 
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
@@ -11,7 +12,14 @@
 	let { children }: Props = $props();
 </script>
 
-<main class="absolute inset-0 h-full w-full flex flex-col justify-between items-center gap-2">
+<main class="absolute inset-0 flex h-full w-full flex-col items-center justify-between gap-2">
+	{#if navigating.to}
+		<div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-80">
+			<div
+				class="size-20 animate-spin rounded-full border-t-[6px] border-buttonsIdx border-opacity-75"
+			></div>
+		</div>
+	{/if}
 	<Header />
 	{@render children?.()}
 	<Footer />

@@ -95,8 +95,8 @@
 	}}
 />
 
-<header class="bg-header fixed h-20 border-b-2 border-border w-full p-2 z-[999]" bind:this={header}>
-	<div class="wrapper max-w-screen-xl h-full mx-auto flex items-center justify-between p-2 gap-2">
+<header class="fixed z-[999] h-20 w-full border-b-2 border-border bg-header p-2" bind:this={header}>
+	<div class="wrapper mx-auto flex h-full max-w-screen-xl items-center justify-between gap-2 p-2">
 		<div
 			class="hamburguer-open z-10"
 			aria-expanded={isAriaExpanded}
@@ -118,12 +118,12 @@
 		</div>
 
 		<div class="logo text-text">
-			<a href="/" class="text-3xl font-bold text-center">L. C.</a>
+			<a href="/" class="text-center text-3xl font-bold">L. C.</a>
 		</div>
 
 		<div class="overlay" data-visible={isAriaExpanded}></div>
 
-		<nav class="text-text flex-1" data-visible={isAriaExpanded}>
+		<nav class="flex-1 text-text" data-visible={isAriaExpanded}>
 			<ul class="z-50 bg-header" data-visible={isAriaExpanded}>
 				<li>
 					<a class="text-2xl" href="/" onclick={closeAriaExpanded}>Home</a>
