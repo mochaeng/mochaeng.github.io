@@ -6,7 +6,7 @@ date: '2025-02-08'
 editDate: '2025-08-04'
 categories: [golang, cuda, pytorch]
 published: true
-background: 'blog3.avif'
+background: 'blog3.jpg'
 ---
 
 <script>
