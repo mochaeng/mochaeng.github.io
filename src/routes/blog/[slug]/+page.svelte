@@ -1,10 +1,13 @@
 <script lang="ts">
 	import LazyImg from '$lib/components/ui/LazyImg.svelte';
-	import { formatDate } from '$lib/utils';
+	import { DOMAIN, formatDate } from '$lib/utils';
 	import { page } from '$app/state';
 
 	let { data } = $props();
-	const imageUrl = $derived(`${page.url.origin}/${data.meta.background}`);
+
+	const siteUrl = page.url.origin === 'http://sveltekit-prerender' ? DOMAIN : page.url.origin;
+	const imageUrl = data.meta.background ? `${siteUrl}/${data.meta.background}` : null;
+	console.log(imageUrl);
 </script>
 
 <svelte:head>
