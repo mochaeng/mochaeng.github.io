@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-	fontsize: clamp(24px, 5vw, 200%);
+	font-size: clamp(24px, 5vw, 200%);
 }
 
 h3 {

@@ -1,18 +1,19 @@
 <script>
+	// @ts-ignore
 	import A from './ui/A.svelte';
 
 	const github = 'https://github.com/mochaeng';
-	const linkedin = 'https://www.linkedin.com/in/luiz-ant%C3%B4nio-4b88161b3/';
+	const linkedin = 'https://www.linkedin.com/in/campos-luiz/';
 	const mail = 'mailto:campos.antoonio@gmail.com';
 </script>
 
-<footer class="h-20 flex w-full mb-2 pb-4 mt-4">
-	<div class="flex mx-auto gap-5">
-		<div class="flex mx-auto gap-6">
+<footer class="mb-2 mt-4 flex h-20 w-full pb-4">
+	<div class="mx-auto flex gap-5">
+		<div class="mx-auto flex gap-6">
 			<A
 				href={github}
 				target="_blank"
-				class="p-2 h-14"
+				class="h-14 p-2"
 				aria-label="Access my GitHub page to see my projects"
 			>
 				<svg
@@ -30,7 +31,7 @@
 			<A
 				href={linkedin}
 				target="_blank"
-				class="p-2 h-14"
+				class="h-14 p-2"
 				aria-label="Access my Linkedin page to see more about me"
 			>
 				<svg
@@ -48,7 +49,7 @@
 			<A
 				href={mail}
 				target="_blank"
-				class="p-2 h-14"
+				class="h-14 p-2"
 				aria-label="Send an e-mail to me if you want to talk more"
 			>
 				<svg

@@ -1,14 +1,24 @@
 <script lang="ts">
 	import LazyImg from '$lib/components/ui/LazyImg.svelte';
 	import { formatDate } from '$lib/utils';
+	import { page } from '$app/state';
 
 	let { data } = $props();
+	const imageUrl = $derived(`${page.url.origin}/${data.meta.background}`);
 </script>
 
 <svelte:head>
 	<title>{data.meta.title}</title>
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
+	<meta property="og:description" content={data.meta.description} />
+	<meta property="og:image" content={imageUrl} />
+	<meta property="og:url" content={page.url.href} />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={data.meta.title} />
+	<meta name="twitter:description" content={data.meta.description} />
+	<meta name="twitter:image" content={imageUrl} />
 </svelte:head>
 
 <div class="mt-20 w-full max-w-screen-xl px-4">
@@ -22,7 +32,10 @@
 				<h1 class="font-[900] leading-[1.2] text-[#df8e1d] dark:text-[#a6e3a1]">
 					{data.meta.title}
 				</h1>
-				<p>Published at {formatDate(data.meta.date)}</p>
+				<div>
+					<p>Published on {formatDate(data.meta.date)}</p>
+					<p>Edited on {formatDate(data.meta.editDate)}</p>
+				</div>
 			</hgroup>
 
 			<div class="flex gap-4">

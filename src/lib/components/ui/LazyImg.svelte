@@ -5,7 +5,7 @@
 
 	const images: any = import.meta.glob(
 		['$lib/assets/**.jpg', '$lib/assets/**.png', '$lib/assets/**.svg', '$lib/assets/**.avif'],
-		{ eager: true, as: 'url' }
+		{ eager: true, query: '?url', import: 'default' }
 	);
 </script>
 

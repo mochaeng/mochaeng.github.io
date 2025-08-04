@@ -53,6 +53,16 @@ const config = {
 				'script-src': ['self'],
 				'report-to': ["'csp-endpoint'"]
 			}
+		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// Ignore 404s for image files during prerender
+				if (path.match(/\.(jpg|jpeg|png|webp|avif)$/)) {
+					console.warn(`Image not found during prerender: ${path}`);
+					return;
+				}
+				throw new Error(message);
+			}
 		}
 	}
 };

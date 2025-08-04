@@ -1,8 +1,9 @@
 ---
 title: PyTorch Inference in Go with CUDA Support
+slug: pytorch-inference-in-go-with-cuda-support
 description: PyTorch Model inference with Golang
 date: '2025-02-08'
-editDate: ''
+editDate: '2025-08-04'
 categories: [golang, cuda, pytorch]
 published: true
 background: 'blog3.avif'

@@ -7,11 +7,12 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: string) {
-	const newDate = new Date(date).toLocaleDateString('en-GB', {
-		weekday: 'short',
+	const newDate = new Date(date + 'T00:00').toLocaleDateString('en-GB', {
+		year: 'numeric',
+		weekday: 'long',
 		day: 'numeric',
-		year: 'numeric'
+		month: 'short'
 	});
 	const parts = newDate.split(' ');
-	return `${parts[0]} ${parts[1]}, ${parts[2]}`;
+	return `${parts[0]} ${parts[1]} ${parts[2]} ${parts[3]}`;
 }
